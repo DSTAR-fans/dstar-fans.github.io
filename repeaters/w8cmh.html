@@ -21,15 +21,56 @@
     <p>We'll be adding info here on how to make use of the W8CMH repeater.</p>
 
     <h2>Dashboards</h2>
-    <p>Dashboards allow you to monitor the repeater activity via the internet.  
-    They allow you to see how the D-STAR repeater is linked, who has been active on the repeater, 
-    and also for testing to determine if the repeater recieved your transmission.</p>
+    <p>
+        Dashboards allow you to monitor the repeater activity via the internet.
+        They allow you to see how the D-STAR repeater is linked, who has been active on the repeater,
+        and also for testing to determine if the repeater recieved your transmission.
+    </p>
 
     <p>
         <a href="https://w8cmh.no-ip.org/" target="_blank">W8CMH DPLUS Dashboard</a>
     </p>
     <p>
         <a href="https://www.dstarusers.org/viewrepeater.php?system=W8CMH" target="_blank">Dstar Users Dashboard</a>
+    </p>
+
+    <h2>Local Repeater Use</h2>
+    <p>
+        The W8CMH repeater has two ports. Port B (70cm), and port C (2m).
+        Users can communicate with other users of the same port by setting the YOUR value to CQCQCQ.
+        For example, on W8CMH B if you announce your call sign and that you are monitoring,
+        other users of W8CMH B would be able to hear you and you would be able to hear them if they respond.
+    </p>
+    <p>
+        It's important to note that W8CMH C users would not be able to hear you without configuring your radio to use the gateway feature to bridge the two ports.
+    </p>
+
+    <h2>Local Repeater Gateway Use</h2>
+    <p>
+        Sometimes users need to be heard on both ports of the repeater at the same time.
+        One common situation for this is a net as the repeater's different ports may be more
+        or less accessible due to signal propogation from ceartain locations.
+        Using both ports would allow the greatest number of people to participate.
+    </p>
+    <p>
+        For example, to communicate from W8CMH B to W8CMH C, one would configure their radio as follows:
+    </p>
+    <code>
+        YOUR:	/W8CMH▪C
+        RPT1:	W8CMH▪▪B
+        RPT2:	W8CMH▪▪G
+        <i>"▪" represents a space, which is an important detail</i>
+    </code>
+    <p>
+        In this mode, since you could be heard on both ports, 
+        it's a good idea to inform listeners which port you are accessing (in the example above, it is Port B).
+        One draw-back of this approach is that if anyone wishes to use the other port for some other purpose 
+        (such as linking to a reflector, or sending images or text messages) this would conflict of your use of the repeater.
+    </p>
+    <p>
+        It could be useful for calling and initiating a contact - then switching to the node the other user is accessing and switching to local CQCQCQ operation.
+        It could also be handy in the event that one user is able to get in on Port B, but the other is only able to access the repeater via Port C.  
+        This would allow both users to communicate with each other.
     </p>
 </body>
 </html>
