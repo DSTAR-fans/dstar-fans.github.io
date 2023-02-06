@@ -22,7 +22,7 @@
     <h1>🗼D-STAR Fans</h1>
     <p>Welcome to <a href="https://DSTAR.fans">DSTAR.fans</a>, a site for fans of <a href="http://www.icomamerica.com/en/products/amateur/dstar/dstar/default.aspx" target="_blank">D-STAR</a>!</p>
 
-    <h2>D-STAR QSO PARTY 2022</h2>
+    <h2 id="qsoParty2022">D-STAR QSO PARTY 2022</h2>
     <h3>The event has ended!</h3>
     <p>
         This global event is back after three years hiatus and is set to take place over the holiday period from<br />
@@ -37,7 +37,46 @@
         Results will be announced on March 1st, 2023
     </p>
 
-    <h2>Simplex Frequencies</h2>
+    <h2 id="gettingStarted">Getting Started / First Steps</h2>
+    <p>
+        The very first thing to do when working with D-STAR is to configure your station values.  
+        These include your call sign in the <b>MY</b> value on your radio (including a short suffix), and a message.
+        With D-STAR, every transmission includes your call-sign, so even a quick "<a href="https://www.k0nr.com/wordpress/2012/12/proper-kerchunking/" target="_blank">kerchunk</a>" on the air, 
+        repeater, or reflector will be sent to other D-STAR users who will be able to see this info in their RX history log.
+    </p>
+    <p>
+        With D-STAR, this can be very handy because some radios include text-to-speech functions 
+        that announce the call-sign of transmissions too short to include the call-sign in a voice transmission. 
+        Also, if a listener is not focused on the radio at the moment a transmission is recieved, they can go back and see who was calling.
+    </p>
+    <p>
+        When operators make a QSO they <a href="http://www.roblocher.com/whitepapers/dstar.html" target="_blank">start</a> with their call sign, and often report on signal strength, their location, and equipment used. 
+        After setting your call sign, D-STAR makes it easy to share some of this other info as well. 
+        Most D-STAR radios support a "suffix" which is a 4-character value following a slash at the end of the call-sign.  
+        The convention is to enter the model number of your radio such as <b>/92AD</b>, <b>/52A</b>, or <b>/5100</b>. 
+        This will make it easy for those familiar with these radios to understand your hardware capabilities - such as sending and recieving images.
+        Some sites with <a href="http://dstarinfo.com/first-steps.aspx" target="_blank">D-STAR Info on First Steps</a> advise putting your name in the suffix – 
+        but this only works for people with four-letter-word names and shorter.
+        You can also look at <a href="https://www.dstar.guru/#most-used-suffix-of-the-year" target="_blank">reflector statistics</a> to get an idea 
+        of the popularity of different radio hardware and modes being used on D-STAR and see how others are using this feature.
+        Some suffixes like <b>/DMR</b> or <b>/PNUT</b> refer to cross-mode links or software being used to access the D-STAR system instead of a radio.
+    </p>
+    <p>
+        While location data can be <a href="/index.html#dprs" target="_self">shared from GPS</a>, oparators often use the TX Message value to share their name and general location, 
+        keeping in mind that via reflectors, people anywhere in the world might see this message.  
+        One example might be "<i>Mark in Galena, Ohio</i>" keeping in mind that there is a 20 character limit on the message field.
+    </p>
+    <p>
+        Many radios allow several call signs and messages to be stored allowing them to be changed frequently to reflect the user's current status.
+        This can allow a great deal of information to be sent with brief kerchunks or long-winded ragchew transmissions just the same.
+    </p>
+    <p>
+        One might think themselves clever to enter some made-up value as their call-sign on D-STAR. 
+        This is possible, but only valid call-signs may be used to access the network of D-STAR gateways. 
+        Once registered with your local gateway, your call sign is your passport to the wider world, so it pays to ensure this value is set correctly from the start.
+    </p>
+
+    <h2 id="withoutRepeater">How to use D-STAR without a repeater</h2>
     <p>
         It's easy to make use of D-STAR without any repeaters or hotspots.  Start by setting your radio for 145.6700
         (the National 2m D-STAR Calling Frequency) and put your radio into DV mode. Just key the mic and you're operating
@@ -73,7 +112,7 @@
         </ol>
     </p>
 
-    <h2>D-STAR Reflectors & Nets</h2>
+    <h2 id="reflectors">D-STAR Reflectors & Nets</h2>
     <p>
         <a href="http://ref062.dstargateway.org/" target="_blank">REF 062</a> A - National Capital Region Net (Washington DC) Wed @ 02:00 UTC
     </p>
@@ -92,7 +131,7 @@
     <p>
         <a href="http://ref001.dstargateway.org/" target="_blank">REF 001</a> C - International
     </p>
-    <p>
+    <p id="reflectorStatistics">
         <a href="https://www.dstar.guru/" target="_blank">Reflector Statistics</a> - Amassed by <a href="https://www.qrz.com/db/IU4PRC" target="_blank">IU4PRC</a>,
         but if you look at the <a href="https://www.dstar.guru/#most-used-suffix-of-the-year" target="_blank">suffixes</a>
         most D-STAR network traffic is from people that aren't using D-STAR capable radios.  For example, when the site
@@ -101,7 +140,7 @@
         request since it's an Open Source project.
     </p>
 
-    <h2>D-STAR Gateway Registration</h2>
+    <h2 id="registration">D-STAR Gateway Registration</h2>
     <p>
         This registration site is provided by volunteers to enable D-STAR enthusiasts who do not have
         a local gateway system to register with; a place to register for access to the D-STAR network.
@@ -109,17 +148,17 @@
         <a href="https://regist.dstargateway.org/Dstar.do" target="_blank">D-STAR Gateway System (REGIST)</a>
     </p>
 
-    <h2>D-STAR Gateway Last Heard</h2>
+    <h2 id="lastHeard">D-STAR Gateway Last Heard</h2>
     <p>
         <a href="https://www.dstarusers.org/lastheard.php" target="_blank">Last Heard</a> allows you to see which
         stations have been connecting through an Internet gatway from a repeater or some other digital device like a
         hot spot or DV Dongle.  It also shows you where the repeater or reflector is located.
     </p>
 
-    <h2>Training</h2>
+    <h2 id="training">Training</h2>
     <p>Here is a link to my <a href="https://1drv.ms/p/s!AjijkVzsfoBNgfWGDUKV77StvBZyYhs?e=x5I0b6">Intro to D-STAR slide deck</a>.</p>
 
-    <h2>Related Software</h2>
+    <h2 id="software">Related Software</h2>
     <div>
         <p>
             <a title="Doozy" target="_blank" href="http://www.pa7lim.nl/doozy/">Doozy</a> - No repeater nearby?
@@ -150,7 +189,7 @@
         </p>
     </div>
 
-    <h2>Gateway Repeaters</h2>
+    <h2 id="gateways">Gateway Repeaters</h2>
     <div>
         <p>
             If another station is using the Gateway feature of a repeater they should announce their source repeater (for example W8CMH B).
@@ -208,7 +247,7 @@
         You can check your status on sites such as <a href="https://aprs.fi" target="_blank">APRS.fi</a> by searching for your call sign.
     </p>
 
-    <h2>Online Communities</h2>
+    <h2 id="community">Online Communities</h2>
     <div>
         <!-- Useful article on SVG scaling https://css-tricks.com/scale-svg/ -->
         <a title="Discord" target="_blank" href="https://discord.gg/hsrt5UkXj3"><img src="/svg/social-discord.svg" alt="Discord logo in a circle"></a>
@@ -216,10 +255,10 @@
         <a title="Facebook" target="_blank" href="https://www.facebook.com/groups/DSTAR.Users.Group/"><img src="/svg/social-facebook.svg" alt="Facebook logo in a circle"></a>
     </div>
 
-    <h2>Testamonials</h2>
+    <h2 id="testamonial">Testamonials</h2>
     <p>"this is the greatest amount of fun i've had with a handheld radio yet XD thanks to you" - EI9LC</p>
 
-    <h2>Connect</h2>
+    <h2 id="feedback">Feedback</h2>
     <p>The site is maintained by Mark, <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
     <p>To contribute, please consider joining the <a href="https://discord.gg/hsrt5UkXj3">DSTAR.fans Discord server</a>, or email KE8BZW via his contact info on QRZ linked above.</p>
 </body>
