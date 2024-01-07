@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>🗼 D-STAR Fans / Repeaters / Response Messages</title>
+    <link rel="icon" type="/image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+
+    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
+</head>
+
+<body>
+    <h1>Responses</h1>
+
+    <h2>RPT?</h2>
+    <p>This response is typically seen when the repeater does not recognize 
+        what was sent as a valid callsign routing command. 
+        This indicates normal repeater operation and if when using a repeater 
+        or reflector, can be treated as a response indicating that the station
+        was heard, similar to the beep response of a traditional FM repeater.
+    </p>
+
+    <h2>UR?</h2>
+    <p>
+        The UR? response in D-STAR means that your signal reached the access 
+        repeater and your call was successfully sent from the destination 
+        repeater. This confirms that your transmission was received by 
+        the system. You should get a reply call from the station you are trying 
+        to contact, or hear other stations on the reflector you are linked to. 
+        If you do not get a UR? response, it means that your signal did not 
+        reach the access repeater, or the destination repeater did not recognize 
+        your call sign. You may need to check your settings (starting with 
+        <a href="/index.html#registration">verifying your registration</a> if you 
+        have not yet done so) or try a different repeater or reflector.
+    </p>
+</body>
+</html>

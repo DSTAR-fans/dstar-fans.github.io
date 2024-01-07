@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://dstar.fans/</loc>
-    <lastmod>2023-11-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -17,6 +17,12 @@
   <url>
     <loc>https://dstar.fans/repeaters/w8dig.html</loc>
     <lastmod>2023-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dstar.fans/repeaters/responses.html</loc>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -35,6 +41,12 @@
   <url>
     <loc>https://dstar.fans/hamvention/2023.html</loc>
     <lastmod>2023-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dstar.fans/operation/responding.html</loc>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

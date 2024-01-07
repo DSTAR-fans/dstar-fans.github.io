@@ -19,16 +19,77 @@
 </head>
 
 <body>
-    <h1>Responding with D-STAR</h1>
-
-    <h2>When using a repeater</h2>
+    <h1>Responding via a Gateway with D-STAR</h1>
     <p>
-        Pressing the RX→CS button again after the conversation is over typically returns the radio to your previous settings.
+        One of the most powerful features of D-STAR is the ability to route
+        transmissions based on the callsign of the destination. This allows
+        you to communicate with a specific station, without knowing what
+        repeater they are on. Unfortunately, this may not work with people
+        using hotspots or repeaters with this feature disabled.
     </p>
-
-    <h2>When connected to a Reflector</h2>
-
-    <h2>When operating simplex</h2>
-    
+    <p>
+        On Icom radios, there is often a dedicated [RX->CS] button. On
+        Kenwood HT's the [ENT] button is used. After a Gateway station is
+        heard, pressing and holding this button will allow you to set the
+        TO field in your radio to their callsign. When you transmit, your
+        transmission will be routed from your gateway repeater to theirs,
+        based on the last gateway they used.
+    </p>
+    <p>
+        Pressing the RX→CS button again after the conversation is over 
+        typically returns the radio to the previous settings.
+    </p>
+    <p>
+        This can be useful if you are scanning several repeaters and 
+        didn't catch which repeater or module they were on, but still wish 
+        to respond. It's also handy for reaching out to friends who may be 
+        traveling. The users of both your gateway, and the remote gateway 
+        will hear your response - regardless of whether or not your friend is 
+        listening. Also, be aware that you may be interrupting a conversation
+        on the other repeater, so be polite and keep your transmission short.
+    </p>
+    <p>
+        It's also important to note the difference between local CQ and 
+        gateway CQ while using gateway repeaters or reflectors. If you make
+        a habit of using the Gateway CQ setting, your responses will be 
+        shared with any Gateway linked repeaters or reflectors.
+    </p>
+    <p>
+        On a modern Icom radio, this can easily be set in DV mode by 
+        selecting <b>Reflector > Use Reflector</b> in the TO field. 
+        If you open the Call Sign (CS) menu which reveals the 
+        underlying UR, R1, R2, and MY settings from older radios, you'll see 
+        that this sets the UR field to <b>CQCQCQ</b> and the R2 field to the 
+        local repeater's gateway. For local CQ the R2 field is not used.
+    </p>
+    <p>
+        Simply put, Gateway CQ sends to everyone connected via the Gateway,
+        and Local CQ sends to everyone on the local repeater - but users 
+        linked via the gateway cannot hear you. So, while it's not the 
+        default CQ setting, it's best to make a habit of using Gateway CQ so 
+        anyone you hear can hear you, then reserve Local CQ for when you need 
+        to do a quick sidebar with someone on the local repeater without 
+        sending it to everyone on the Gateway.
+    </p>
+    <p>
+        If using routing features, it's a good idea to explain how they are 
+        hearing you such as adding "via callsign routing" to the end of your 
+        transmission, this should cue knowledgable uers that they'll need to 
+        use the gateway to respond to you. Otherwise they could be responding 
+        to everyone on the local repeater, but you won't hear them.
+    </p>
+    <p>
+        You should also be careful using callsign routing while linked to 
+        reflectors. If you hear someone on a reflector, and use callsign 
+        routing to respond, the response will not be heard on the reflector; 
+        only on the Gateway repeaters used by you and the station you are 
+        calling. If they're using a hotspot, they may not hear you at all.
+    </p>
+    <p>
+        Experienced D-STAR users often dismiss the feature altogether - but 
+        used properly it is very convenient, but due to the popularity of 
+        Local CQ in the US and the popularity of hotspots, it won't always
+        help. 
+    </p>
 </body>
 </html>
