@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>🗼 D-STAR Fans / Operation / Repeater Linking</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="description"
+        content="Linking to a D-STAR repeater so replies can be sent via Gateway CQ." />
+    <META NAME="geo.position" CONTENT="40.21536041298822; -82.87969925125871">
+    <META NAME="geo.placename" CONTENT="Galena, OH">
+    <META NAME="geo.region" CONTENT="US">
+
+    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
+</head>
+
+<body>
+    <h1>Connecting D-STAR Gateway Repeaters via Linking</h1>
+    <p>
+        A simple way of connecting two repeaters is to link them directly as 
+        you would with a reflector. This allows users to respond via the usual 
+        Gateway CQ configuration without needing to know the repeater or enter
+        the callsign of the remote station.
+    </p>
+    <p>
+        To do this, the UR field of the sending repeater needs to be set to
+        the callsign of the receiving repeater with a <b>L</b> in the 8th 
+        positon. For example, if you wanted to link to the <b>W8TST B</b> node, 
+        you would enter <b>W8TST BL</b> in the UR field of your radio.
+    </p>
+    <p>
+        If the repeater callsign were longer like WT8EST, you would need to
+        omit the space, so you'd enter <b>WT8ESTL</b> in the UR field of your 
+        radio.
+    </p>
+    <p>
+        Once configured, you'd briefly send a transmission and if the link is 
+        successful you should hear a message confirming the link.
+    </p>
+    <p>
+        After linking successfully, set your radio to Gateway CQ mode. 
+        Transmissions will be sent from your local gateway to the remote 
+        gateway repeater and all stations listeing to either repeater will 
+        hear the response, but only stations using Gateway CQ or 
+        <a href="callsignrouting.html">callsign routing</a> will be able to 
+        respond.
+    </p>
+    <p>
+        Be sure to send the <b>Unlink</b> command "       U" (7 spaces followed 
+        by a U in the 8th position) to unlink the repeaters when you are done. 
+        If successful, you should hear a message confirming the unlink. Most
+        repeaters will automatically unlink after a period of inactivity, but
+        it's good practice to unlink when you are done.
+    </p>
+    <h2>Common Linking Errors</h2>
+    <p>
+        When attempting to link, sometimes you may hear a message indicating
+        that the link is already in use. This means that someone else is
+        already using the link. If you are sure that you are not interrupting
+        a conversation, you can try again in a few minutes.
+    </p>
+    <p>
+        If a user can't link to a repeater, they could also try 
+        <a href="routing.html">original routing</a> but it's important to 
+        inform listeners of the sending repeater and node so they can 
+        reply, otherwise they'd need to use 
+        <a href="callsignrouting.html">callsign routing</a>.
+    </p>
+</body>
+
+</html>
