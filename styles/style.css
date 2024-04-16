@@ -3,6 +3,7 @@ body {
     font-size: 1em;
     max-width: 960px;
     margin: auto;
+    padding: 20px;
 }
 h1 {
     font-size: 3em;
@@ -62,4 +63,84 @@ h1, h2, h3 {
 
 th {
     background-color: darkgray;
+}
+
+/* Basic styling for the panels */
+.event-container {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout by default */
+}
+
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the event panel */
+.event-panel {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-right: 20px;
+}
+
+.event-panel:hover {
+    transform: translateY(-5px);
+}
+
+/* Header with a background image (optional) */
+.event-header {
+    background-image: url('your-header-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+}
+
+/* Event content */
+.event-content {
+    padding: 20px;
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.event-description,
+.event-location,
+.event-time {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+/* Footer with a call-to-action */
+.event-footer {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.event-footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2a7fff;
+}
+
+/* Media query for narrow screens (e.g., smartphones) */
+@media (max-width: 600px) {
+    .event-container {
+        flex-direction: column; /* Stacked layout */
+        flex-wrap: wrap;
+        /* Wrap to next row if needed */
+    }
 }
