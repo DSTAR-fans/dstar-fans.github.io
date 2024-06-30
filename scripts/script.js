@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
             eventId: 'hamvention'
         },
         {
-            startDate: new Date('2024-06-01'),
-            endDate: new Date('2024-06-03'),
+            startDate: new Date('2025-06-01'),
+            endDate: new Date('2025-07-01'),
             eventId: 'field-day'
         },
         {
-            startDate: new Date('2024-06-01'),
-            endDate: new Date('2024-06-03'),
+            startDate: new Date('2025-01-01'),
+            endDate: new Date('2025-02-01'),
             eventId: 'winter-field-day'
         },
         {
