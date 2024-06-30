@@ -2,19 +2,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Get the current date
     const currentDate = new Date();
 
-    // 2. Define the start and end dates
-    const startDate = new Date('2024-04-18'); // Replace 'YYYY-MM-DD' with your start date
-    const endDate = new Date('2024-05-18'); // Replace 'YYYY-MM-DD' with your end date
+    // 2. Define an array of events with their start and end dates and IDs
+    const events = [
+        {
+            startDate: new Date('2024-04-18'),
+            endDate: new Date('2024-05-18'),
+            eventId: 'hamvention'
+        },
+        {
+            startDate: new Date('2024-06-01'),
+            endDate: new Date('2024-06-03'),
+            eventId: 'field-day'
+        },
+        {
+            startDate: new Date('2024-06-01'),
+            endDate: new Date('2024-06-03'),
+            eventId: 'winter-field-day'
+        },
+        {
+            startDate: new Date('2024-12-01'),
+            endDate: new Date('2025-03-01'),
+            eventId: 'dstar-qso-party'
+        },
+        // Add more events here
+    ];
 
-    // 3. Select the event-container element
-    const eventContainer = document.querySelector('.event-container');
+    // 3. Loop through each event
+    events.forEach(event => {
+        // Directly select the div by its eventId
+        const eventDiv = document.getElementById(event.eventId);
 
-    // 4. Compare the current date with the start and end dates
-    if (currentDate > startDate && currentDate < endDate) {
-        // 5. Display the event-container
-        eventContainer.style.display = 'block';
-    } else {
-        // Hide the event-container
-        eventContainer.style.display = 'none';
-    }
+        // Check if the eventDiv exists to avoid errors
+        if (eventDiv) {
+            // 4. Compare the current date with the start and end dates of the event
+            if (currentDate >= event.startDate && currentDate <= event.endDate) {
+                // 5. Display the div
+                eventDiv.style.display = 'block';
+            } else {
+                // Hide the div
+                eventDiv.style.display = 'none';
+            }
+        }
+    });
 });
