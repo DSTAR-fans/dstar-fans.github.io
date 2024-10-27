@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             eventId: 'winter-field-day'
         },
         {
-            startDate: new Date('2024-12-01'),
+            startDate: new Date('2024-10-15'),
             endDate: new Date('2025-03-01'),
             eventId: 'dstar-qso-party'
         },
