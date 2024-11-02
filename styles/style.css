@@ -104,7 +104,7 @@ th {
 
 /* Header with a background image (optional) */
 .event-header {
-    background-image: url('your-header-image-url.jpg');
+    background-image: url('');
     background-size: cover;
     background-position: center;
     height: 150px;
