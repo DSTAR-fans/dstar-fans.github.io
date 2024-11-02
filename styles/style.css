@@ -50,7 +50,7 @@ hr {
 
 h1, h2, h3 {
     font-weight: 100;
-    margin-top: 2em;
+    margin-top: 0;
     margin-bottom: 0;
     /*padding-bottom: 1em;*/
 }
@@ -78,6 +78,11 @@ th {
     padding: 0;
 }
 
+.content-item {
+    margin: 1rem;
+    margin-bottom: 3rem;
+}
+
 /* Styling for the event panel */
 .event-panel {
     background-color: #ffffff;
@@ -89,6 +94,8 @@ th {
     cursor: pointer;
     transition: transform 0.3s ease;
     margin-right: 20px;
+    margin-bottom: 2rem;
+    padding: 2rem 2rem;
 }
 
 .event-panel:hover {
