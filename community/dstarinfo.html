@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>D-STAR Community Status</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="description" content="Check the status of key sites in the D-STAR community." />
+    <style>
+        .statusButton {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1em;
+            margin: 10px 0;
+            background-color: gray;
+        }
+
+        .hiddenIframe {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>D-STAR Info Status</h1>
+    </header>
+    <main>
+        <section>
+            <p>Check the status of the D-STAR Info sites:</p>
+            <button id="dstarInfoButton" class="statusButton" data-original-text="D-STAR Info">Check D-STAR
+                Info</button>
+            <button id="dstarUsersButton" class="statusButton" data-original-text="D-STAR Users">Check D-STAR
+                Users</button>
+            <button id="icomButton" class="statusButton" data-original-text="Icom America">Check Icom America</button>
+            <button id="icomUKButton" class="statusButton" data-original-text="Icom UK">Check Icom UK</button>
+            <button id="icomJapanButton" class="statusButton" data-original-text="Icom Japan">Check Icom Japan</button>
+            <iframe id="dstarInfoIframe" class="hiddenIframe"></iframe>
+            <iframe id="dstarUsersIframe" class="hiddenIframe"></iframe>
+            <iframe id="icomIframe" class="hiddenIframe"></iframe>
+            <iframe id="icomUKIframe" class="hiddenIframe"></iframe>
+            <iframe id="icomJapanIframe" class="hiddenIframe"></iframe>
+        </section>
+    </main>
+    <script>
+        // Function to check the status of a site using an iframe
+        function checkSiteStatus(url, buttonId, iframeId, timeoutDuration) {
+            const button = document.getElementById(buttonId);
+            const iframe = document.getElementById(iframeId);
+            const originalText = button.getAttribute('data-original-text');
+
+            // Indicate that the check is in progress
+            button.style.backgroundColor = 'orange';
+            button.textContent = `Checking ${originalText}...`;
+
+            // Set a timeout to handle slow responses
+            const timeout = setTimeout(() => {
+                button.style.backgroundColor = 'red';
+                button.textContent = `${originalText} is Down (Timeout)`;
+                iframe.onload = null; // Prevent further changes after timeout
+            }, timeoutDuration); // Timeout duration in milliseconds
+
+            iframe.onload = function () {
+                if (button.style.backgroundColor !== 'red') { // Only update if not already timed out
+                    clearTimeout(timeout);
+                    button.style.backgroundColor = 'green';
+                    button.textContent = `${originalText} is Up`;
+                }
+            };
+
+            iframe.onerror = function () {
+                clearTimeout(timeout);
+                button.style.backgroundColor = 'red';
+                button.textContent = `${originalText} is Down`;
+            };
+
+            iframe.src = url;
+        }
+
+        // Call the function for each site when the page loads
+        window.onload = function () {
+            checkSiteStatus('http://www.dstarinfo.com/maps-by-region.aspx', 'dstarInfoButton', 'dstarInfoIframe', 10000); // 10 seconds timeout
+            checkSiteStatus('https://www.dstarusers.org', 'dstarUsersButton', 'dstarUsersIframe', 20000); // 20 seconds timeout
+            checkSiteStatus('https://www.icomamerica.com/lineup/amateur/D-STAR/', 'icomButton', 'icomIframe', 20000); // 20 seconds timeout
+            checkSiteStatus('https://www.icomuk.co.uk/', 'icomUKButton', 'icomUKIframe', 20000); // 20 seconds timeout
+            checkSiteStatus('https://www.icomjapan.com/', 'icomJapanButton', 'icomJapanIframe', 20000); // 20 seconds timeout
+        };
+    </script>
+</body>
+
+</html>
