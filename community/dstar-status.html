@@ -11,6 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="description" content="Check the status of key sites in the D-STAR community." />
+    <meta name="keywords"
+        content="D-STAR, DSTAR, D-STAR community, D-STAR status, D-STAR sites, ham radio, amateur radio, digital radio" />
+    <meta name="author" content="DSTAR.fans" />
+    <meta property="og:title" content="D-STAR Community Status" />
+    <meta property="og:description" content="Check the status of key sites in the D-STAR community." />
+    <meta property="og:image" content="/images/og-image.png" />
+    <meta property="og:url" content="https://dstar.fans/status" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="D-STAR Community Status" />
+    <meta name="twitter:description" content="Check the status of key sites in the D-STAR community." />
+    <meta name="twitter:image" content="/images/twitter-image.png" />
     <style>
         .statusButton {
             padding: 10px 20px;
@@ -25,16 +36,40 @@
         .hiddenIframe {
             display: none;
         }
+
+        .statusText {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .statusText .green {
+            color: green;
+            font-weight: bold;
+        }
+
+        .statusText .orange {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .statusText .red {
+            color: red;
+            font-weight: bold;
+        }
     </style>
+    
+    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
 
 <body>
     <header>
-        <h1>D-STAR Info Status</h1>
+        <h1>D-STAR Community Status</h1>
     </header>
     <main>
         <section>
-            <p>Check the status of the D-STAR Info sites:</p>
+            <p>Check the status of the D-STAR community sites:</p>
+            <button id="dstarFansButton" class="statusButton" data-original-text="DSTAR.fans">Check DSTAR.fans</button>
             <button id="dstarInfoButton" class="statusButton" data-original-text="D-STAR Info">Check D-STAR
                 Info</button>
             <button id="dstarUsersButton" class="statusButton" data-original-text="D-STAR Users">Check D-STAR
@@ -47,6 +82,15 @@
             <iframe id="icomIframe" class="hiddenIframe"></iframe>
             <iframe id="icomUKIframe" class="hiddenIframe"></iframe>
             <iframe id="icomJapanIframe" class="hiddenIframe"></iframe>
+            <iframe id="dstarFansIframe" class="hiddenIframe"></iframe>
+            <p class="statusText">
+                Welcome to the D-STAR Community Status Page, where you can instantly see the operational status of
+                popular D-STAR sites. Each button's color indicates the status at page load: <span
+                    class="green">Green</span> for fully operational, <span class="orange">Yellow</span> when the scan
+                is still underway (up to 10 seconds), and <span class="red">Red</span> for sites with issues or offline.
+                Feel free to return here if you suspect a site might be down.
+            </p>
+            <p><a href="https://dstar.fans">Back to DSTAR.fans Home Page</a></p>
         </section>
     </main>
     <script>
@@ -91,6 +135,7 @@
             checkSiteStatus('https://www.icomamerica.com/lineup/amateur/D-STAR/', 'icomButton', 'icomIframe', 20000); // 20 seconds timeout
             checkSiteStatus('https://www.icomuk.co.uk/', 'icomUKButton', 'icomUKIframe', 20000); // 20 seconds timeout
             checkSiteStatus('https://www.icomjapan.com/', 'icomJapanButton', 'icomJapanIframe', 20000); // 20 seconds timeout
+            checkSiteStatus('https://dstar.fans', 'dstarFansButton', 'dstarFansIframe', 20000); // 20 seconds timeout
         };
     </script>
 </body>
