@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
             eventId: 'field-day'
         },
         {
-            startDate: new Date('2025-01-01'),
-            endDate: new Date('2025-02-01'),
+            startDate: new Date('2026-01-01'),
+            endDate: new Date('2026-02-01'),
             eventId: 'winter-field-day'
         },
         {
-            startDate: new Date('2024-10-15'),
-            endDate: new Date('2025-03-01'),
+            startDate: new Date('2025-10-15'),
+            endDate: new Date('2026-03-01'),
             eventId: 'dstar-qso-party'
         },
         // Add more events here
