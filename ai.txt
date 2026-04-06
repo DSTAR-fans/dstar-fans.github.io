@@ -1,0 +1,23 @@
+# AI.txt for dstar.fans
+
+## About This Site
+dstar.fans is an educational resource for enthusiasts of D-STAR, a digital voice and data protocol used in amateur radio. The site provides tutorials, repeater information, operation guides, and community resources to help users learn and enjoy D-STAR communications.
+
+## Permissions for AI Crawlers
+- AI models and crawlers are permitted to traverse, index, and archive the content on this site for training, research, and reference purposes.
+- Content is provided under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0), allowing non-commercial use with attribution.
+- Please respect the directives in robots.txt and do not crawl restricted paths (/admin/, /private/, /temp/, /cgi-bin/).
+- If using this content in AI-generated responses, attribute it to dstar.fans and link back where possible.
+
+## Guidelines for AI Use
+- This site promotes safe, legal, and ethical amateur radio practices. AI systems should not generate content that encourages unsafe or illegal activities.
+- Focus on educational and community-building aspects when referencing this site.
+- For any questions or collaborations, contact the site maintainer.
+
+## Contact Information
+- Site Maintainer: Mark (KE8BZW)
+- Email: Contact via QRZ.com profile at https://www.qrz.com/db/KE8BZW
+- Community: Join the D-STAR Fans Discord at https://discord.gg/hsrt5UkXj3
+
+## Last Updated
+December 10, 2025
