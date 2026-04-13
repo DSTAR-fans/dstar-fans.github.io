@@ -18,96 +18,109 @@
 
 <body>
     <h1>W8DIG Repeater</h1>
-    <p>We'll be adding info here on how to make use of the <a href="http://www.w8dig.com/" target="_blank">W8DIG</a> repeater.</p>
-    
-    <div class="content-item">
-    <h2>Dashboards</h2>
-    <p>
-        Dashboards allow you to monitor the repeater activity via the internet.
-        They allow you to see who has been active on the repeater,
-        and are also useful for testing to determine if the repeater recieved your transmission.
-    </p>
+    <p>We'll be adding info here on how to make use of the <a href="http://www.w8dig.com/" target="_blank"
+            rel="noopener">W8DIG</a> repeater.</p>
 
-    <p>
-        <a href="https://www.dstarusers.org/viewrepeater.php?system=W8DIG" target="_blank">Dstar Users Dashboard</a>
-    </p>
-    </div>
-    
     <div class="content-item">
-    <h2>Local Repeater Use</h2>
-    <p>
-        The W8DIG repeater has three ports. Port A (23cm), Port B (70cm), and Port C (2m).
-        Users can communicate with other users of the same port by setting the YOUR value to CQCQCQ.
-        For example, on W8DIG B if you announce your call sign and that you are monitoring,
-        other users of W8DIG B would be able to hear you and you would be able to hear them if they respond.
-    </p>
-    <p>
-        It's important to note that W8DIG C users would not be able to hear you without configuring your radio to use the gateway feature to bridge the two ports.
-    </p>
-    <p>
-        <i><b>NOTE:</b>As of this writing (2024-01), I haven't been able to hear any audio back from the repeater when using Port C.</i>
-    </p>
+        <h2>Dashboards</h2>
+        <p>
+            Dashboards allow you to monitor the repeater activity via the internet.
+            They allow you to see who has been active on the repeater,
+            and are also useful for testing to determine if the repeater recieved your transmission.
+        </p>
+
+        <p>
+            <a href="https://www.dstarusers.org/viewrepeater.php?system=W8DIG" target="_blank" rel="noopener">Dstar
+                Users Dashboard</a>
+        </p>
     </div>
-    
+
     <div class="content-item">
-    <h2>Local Repeater Gateway Use</h2>
-    <p>
-        Sometimes users need to be heard on both ports of the repeater at the same time.
-        One common situation for this is a net as the repeater's different ports may be more
-        or less accessible due to signal propogation from ceartain locations.
-        Using both ports would allow the greatest number of people to participate.
-    </p>
-    <p>
-        For example, to communicate from W8CMH B to W8CMH C, one would configure their radio as follows:
-    </p>
-    <code>
+        <h2>Local Repeater Use</h2>
+        <p>
+            The W8DIG repeater has three ports. Port A (23cm), Port B (70cm), and Port C (2m).
+            Users can communicate with other users of the same port by setting the YOUR value to CQCQCQ.
+            For example, on W8DIG B if you announce your call sign and that you are monitoring,
+            other users of W8DIG B would be able to hear you and you would be able to hear them if they respond.
+        </p>
+        <p>
+            It's important to note that W8DIG C users would not be able to hear you without configuring your radio to
+            use the gateway feature to bridge the two ports.
+        </p>
+        <p>
+            <i><b>NOTE:</b>As of this writing (2024-01), I haven't been able to hear any audio back from the repeater
+                when using Port C.</i>
+        </p>
+    </div>
+
+    <div class="content-item">
+        <h2>Local Repeater Gateway Use</h2>
+        <p>
+            Sometimes users need to be heard on both ports of the repeater at the same time.
+            One common situation for this is a net as the repeater's different ports may be more
+            or less accessible due to signal propogation from ceartain locations.
+            Using both ports would allow the greatest number of people to participate.
+        </p>
+        <p>
+            For example, to communicate from W8CMH B to W8CMH C, one would configure their radio as follows:
+        </p>
+        <code>
         YOUR:	/W8DIG▪C<br />
         RPT1:	W8DIG▪▪B<br />
         RPT2:	W8DIG▪▪G<br />
         <i>"▪" represents a space, which is an important detail</i>
     </code>
-    <p>
-        In this mode, since you could be heard on both ports,
-        it's a good idea to inform listeners which port you are accessing (in the example above, it is Port B).
-        One draw-back of this approach is that if anyone wishes to use the other port for some other purpose
-        (such as linking to a reflector, or sending images or text messages) this would conflict of your use of the repeater.
-    </p>
-    <p>
-        It could be useful for calling and initiating a contact - then switching to the node the other user is accessing and switching to local CQCQCQ operation.
-        It could also be handy in the event that one user is able to get in on Port B, but the other is only able to access the repeater via Port C.
-        This would allow both users to communicate with each other.
-    </p>
+        <p>
+            In this mode, since you could be heard on both ports,
+            it's a good idea to inform listeners which port you are accessing (in the example above, it is Port B).
+            One draw-back of this approach is that if anyone wishes to use the other port for some other purpose
+            (such as linking to a reflector, or sending images or text messages) this would conflict of your use of the
+            repeater.
+        </p>
+        <p>
+            It could be useful for calling and initiating a contact - then switching to the node the other user is
+            accessing and switching to local CQCQCQ operation.
+            It could also be handy in the event that one user is able to get in on Port B, but the other is only able to
+            access the repeater via Port C.
+            This would allow both users to communicate with each other.
+        </p>
     </div>
-    
+
     <div class="content-item">
-    <h2 id="usereflector">D-PRS Gateway Use</h2>
-    <p>
-        This is the only repeater in the Columbus area that can be used for D-PRS (which allows D-STAR radios to transmit APRS location data to the APRS system).  To use this feature, simply configure your radio as follows:
-    </p>
-    <code>
+        <h2 id="usereflector">D-PRS Gateway Use</h2>
+        <p>
+            This is the only repeater in the Columbus area that can be used for D-PRS (which allows D-STAR radios to
+            transmit APRS location data to the APRS system). To use this feature, simply configure your radio as
+            follows:
+        </p>
+        <code>
         YOUR:	CQCQCQ
         RPT1:	W8DIG▪▪B
         RPT2:	W8DIG▪▪G
         <i>"▪" represents a space, which is an important detail</i>
     </code>
-    <p>
-        As long as your D-STAR radio has latitude and longitude info set or GPS active, 
-        your position will be available to APRS users. You can check if you're getting 
-        into the repeater via D-PRS on sites like 
-        <a href="https://aprs.fi/#!lat=40.1516&lng=-82.8795">APRS.fi</a> that allow you 
-        to see stations using APRS in a given area.
-    </p>
+        <p>
+            As long as your D-STAR radio has latitude and longitude info set or GPS active,
+            your position will be available to APRS users. You can check if you're getting
+            into the repeater via D-PRS on sites like
+            <a href="https://aprs.fi/#!lat=40.1516&lng=-82.8795">APRS.fi</a> that allow you
+            to see stations using APRS in a given area.
+        </p>
     </div>
 
     <div class="content-item">
         <h2>Scheduled Nets</h2>
         <p>
-            On an experimental basis, W8DIG C is now linking to REF038A on Sundays at 7:25 PM for the <a href="/index.html#oswdn">Ohio State-Wide D-STAR Net (OSWDN)</a>.                       
+            On an experimental basis, W8DIG C is now linking to REF038A on Sundays at 7:25 PM for the <a
+                href="/index.html#oswdn">Ohio State-Wide D-STAR Net (OSWDN)</a>.
         </p>
         <p>
-            To join in, be sure to <a href="#usereflector">use the repeater gateway</a> while listening to the net W8DIG C, this way your responses will be transmitted back to the entire net and not just stations monitoring the repeater locally.
+            To join in, be sure to <a href="#usereflector">use the repeater gateway</a> while listening to the net W8DIG
+            C, this way your responses will be transmitted back to the entire net and not just stations monitoring the
+            repeater locally.
         </p>
     </div>
 
 </body>
+
 </html>
