@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. Define an array of events with their start and end dates and IDs
     const events = [
         {
-            startDate: new Date('2024-04-18'),
-            endDate: new Date('2024-05-18'),
+            startDate: new Date('2026-04-18'),
+            endDate: new Date('2026-05-18'),
             eventId: 'hamvention'
         },
         {
