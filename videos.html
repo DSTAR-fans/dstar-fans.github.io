@@ -3,15 +3,20 @@
 
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>🗼 D-STAR Fans / Instructional Videos</title>
+    <title>Instructional Videos — D-STAR Fans</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/videos.html">
+    <link rel="alternate" type="application/rss+xml" title="D-STAR Fans News" href="/feed.xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="description" content="Instructional video series for learning D-STAR radio operations and features." />
+    <meta name="description"
+        content="D-STAR Quick instructional Shorts from the DSTARfans YouTube channel: call sign setup, Hamvention simplex, REF038C linking, and REGIST gateway registration." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <META NAME="geo.position" CONTENT="40.21536041298822; -82.87969925125871">
     <META NAME="geo.placename" CONTENT="Galena, OH">
     <META NAME="geo.region" CONTENT="US">
@@ -22,64 +27,115 @@
 
 <body>
 
-    <h1>Instructional Videos</h1>
-    <p>Welcome to our instructional video series on D-STAR! These videos provide step-by-step guides to help you get
-        started with D-STAR radio operations, from basic setup to advanced features.</p>
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a class="active" href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="content-item">
-        <h2>First Time Call Sign Setup</h2>
-        <p>This introductory video covers the basics call sign configuration.</p>
-        <p><a href="https://youtube.com/shorts/HH-8kM2MLXM" target="_blank" rel="noopener">Icom ID-52</a></p>
-        <p><a href="https://youtube.com/shorts/5zQu5HAHT1I" target="_blank" rel="noopener">Icom ID-51</a></p>
-        <p><a href="https://youtube.com/shorts/bX4LKQC2mow" target="_blank" rel="noopener">Icom ID-5100</a></p>
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 2rem;">
+            <span class="section-kicker">D-STAR Quick</span>
+            <h1>Instructional Videos</h1>
+            <p class="hero-lead">
+                Short, practical Shorts from the
+                <a href="https://www.youtube.com/@DSTARfans" target="_blank" rel="noopener">DSTARfans</a>
+                YouTube channel—call sign setup, Hamvention simplex, linking, and gateway registration.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="https://www.youtube.com/@DSTARfans" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube channel
+                </a>
+                <a class="btn btn-secondary" href="https://www.youtube.com/@DSTARfans/shorts" target="_blank" rel="noopener">All Shorts</a>
+            </div>
+        </header>
+
+        <div class="content-item">
+            <h2>First-time call sign setup</h2>
+            <p>Enter MY call sign and slash suffix on a blank or new radio so every DV transmission identifies you correctly.</p>
+            <ul style="margin-left: 1.25rem;">
+                <li><a href="https://www.youtube.com/shorts/HH-8kM2MLXM" target="_blank" rel="noopener">Icom ID-52</a> — First Time Call Sign Setup</li>
+                <li><a href="https://www.youtube.com/shorts/5zQu5HAHT1I" target="_blank" rel="noopener">Icom ID-51</a> — First Time Call Sign Setup</li>
+                <li><a href="https://www.youtube.com/shorts/bX4LKQC2mow" target="_blank" rel="noopener">Icom ID-5100</a> — First Time Call Sign Setup</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">Also see the <a href="/guides/getting-started.html">getting started guide</a>.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Hamvention D-STAR simplex setup</h2>
+            <p>Program the official Hamvention D-STAR simplex frequency (446.1000 DV with CSQL 13) into a Call Channel—no repeater required.</p>
+            <ul style="margin-left: 1.25rem;">
+                <li><a href="https://www.youtube.com/shorts/Cif9qZm27Dw" target="_blank" rel="noopener">Icom ID-52</a> — Hamvention Simplex Setup</li>
+                <li><a href="https://www.youtube.com/shorts/MpWNuPGUqxo" target="_blank" rel="noopener">Icom ID-51</a> — Hamvention Simplex Setup</li>
+                <li><a href="https://www.youtube.com/shorts/Q7T8FW32IQE" target="_blank" rel="noopener">Icom ID-5100</a> — Hamvention Simplex Setup</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">Background: <a href="/guides/simplex.html">simplex guide</a> · <a href="/hamvention/2026.html">Hamvention 2026</a>.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Linking to reflectors</h2>
+            <p>Join a big talk group over the internet via your gateway repeater.</p>
+            <ul style="margin-left: 1.25rem;">
+                <li><a href="https://www.youtube.com/shorts/LT0Urqk3Ab4" target="_blank" rel="noopener">How to link to Reflector REF038C for Hamvention</a> (Icom ID-5100)</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">More on nets and reflectors: <a href="/guides/reflectors-and-nets.html">reflectors &amp; nets guide</a>.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Gateway registration</h2>
+            <p>Register your call sign so you can use internet-linked D-STAR features (reflectors, callsign routing, etc.).</p>
+            <ul style="margin-left: 1.25rem;">
+                <li><a href="https://www.youtube.com/shorts/SE6Pe_rdF04" target="_blank" rel="noopener">Registering with the Gateway System (REGIST)</a></li>
+            </ul>
+            <p class="muted" style="margin-top: 0.75rem; font-size: 0.9rem;">Written steps: <a href="/guides/registration.html">gateway registration guide</a>.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Full channel catalog</h2>
+            <p>All published D-STAR Quick Shorts from <a href="https://www.youtube.com/@DSTARfans" target="_blank" rel="noopener">@DSTARfans</a> (newest first):</p>
+            <ol style="margin-left: 1.25rem;">
+                <li><time datetime="2026-05-06">2026-05-06</time> — <a href="https://www.youtube.com/shorts/LT0Urqk3Ab4" target="_blank" rel="noopener">Link to REF038C (ID-5100)</a></li>
+                <li><time datetime="2026-05-04">2026-05-04</time> — <a href="https://www.youtube.com/shorts/SE6Pe_rdF04" target="_blank" rel="noopener">Gateway registration (REGIST)</a></li>
+                <li><time datetime="2026-04-19">2026-04-19</time> — <a href="https://www.youtube.com/shorts/Q7T8FW32IQE" target="_blank" rel="noopener">ID-5100 Hamvention simplex</a></li>
+                <li><time datetime="2026-04-17">2026-04-17</time> — <a href="https://www.youtube.com/shorts/bX4LKQC2mow" target="_blank" rel="noopener">ID-5100 call sign setup</a></li>
+                <li><time datetime="2026-04-15">2026-04-15</time> — <a href="https://www.youtube.com/shorts/MpWNuPGUqxo" target="_blank" rel="noopener">ID-51 Hamvention simplex</a></li>
+                <li><time datetime="2026-04-11">2026-04-11</time> — <a href="https://www.youtube.com/shorts/Cif9qZm27Dw" target="_blank" rel="noopener">ID-52 Hamvention simplex</a></li>
+                <li><time datetime="2026-04-09">2026-04-09</time> — <a href="https://www.youtube.com/shorts/5zQu5HAHT1I" target="_blank" rel="noopener">ID-51 call sign setup</a></li>
+                <li><time datetime="2026-04-06">2026-04-06</time> — <a href="https://www.youtube.com/shorts/HH-8kM2MLXM" target="_blank" rel="noopener">ID-52 call sign setup</a></li>
+            </ol>
+            <p style="margin-top: 1rem;">
+                Subscribe on YouTube for new Shorts as they publish:
+                <a href="https://www.youtube.com/@DSTARfans?sub_confirmation=1" target="_blank" rel="noopener">@DSTARfans</a>.
+            </p>
+        </div>
     </div>
 
-    <div class="content-item">
-        <h2>Hamvention D-STAR Simplex Setup</h2>
-        <p>Videos showing how to set up simplex operation for Hamvention.</p>
-        <p><a href="https://youtube.com/shorts/Cif9qZm27Dw" target="_blank" rel="noopener">Icom ID-52</a></p>
-        <p><a href="https://youtube.com/shorts/MpWNuPGUqxo" target="_blank" rel="noopener">Icom ID-51</a></p>
-        <p><a href="https://youtube.com/shorts/Q7T8FW32IQE" target="_blank" rel="noopener">Icom ID-5100</a></p>
-    </div>
-
-    <div class="content-item">
-        <h2>Linking to Reflectors</h2>
-        <p>How to link to D-STAR reflectors for worldwide communication.</p>
-        <p><a href="https://youtube.com/shorts/LT0Urqk3Ab4" target="_blank" rel="noopener">How to link to Reflector REF038C for Hamvention with an Icom ID-5100</a></p>
-    </div>
-
-    <div class="content-item">
-        <h2>Gateway Registration</h2>
-        <p>Registering with the D-STAR Gateway System to access internet features.</p>
-        <p><a href="https://youtube.com/shorts/SE6Pe_rdF04" target="_blank" rel="noopener">Registering with the Gateway System (REGIST)</a></p>
-    </div>
-
-    <!-- <div class="content-item">
-        <h2>Getting Started with D-STAR</h2>
-        <p>This introductory video covers the basics of D-STAR, including radio setup, call sign configuration, and your
-            first QSO.</p>
-        <p><a href="#" target="_blank">Watch Video 1: D-STAR Basics</a></p>
-    </div>
-
-    <div class="content-item">
-        <h2>Using D-STAR Reflectors</h2>
-        <p>Learn how to connect to D-STAR reflectors for worldwide communication.</p>
-        <p><a href="#" target="_blank">Watch Video 2: Reflector Operations</a></p>
-    </div>
-
-    <div class="content-item">
-        <h2>D-STAR Text Messaging</h2>
-        <p>Discover how to send and receive text messages using D-STAR radios and apps.</p>
-        <p><a href="#" target="_blank">Watch Video 3: Text Messaging Features</a></p>
-    </div> -->
-
-    <div class="content-item">
-        <h2>More Videos Coming Soon</h2>
-        <p>Stay tuned for additional videos covering topics like D-PRS, repeater linking, and troubleshooting common
-            issues.</p>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
 
 </body>
 
 </html>
-</content>

@@ -3,41 +3,85 @@
 
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>🗼 D-STAR Fans / Operation / Routing</title>
+    <title>Original Routing — D-STAR Fans</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/operation/routing.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="description"
-        content="How to contact users on a remote Gateway repeater via D-STAR." />
-    <META NAME="geo.position" CONTENT="40.21536041298822; -82.87969925125871">
-    <META NAME="geo.placename" CONTENT="Galena, OH">
-    <META NAME="geo.region" CONTENT="US">
-
-    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <meta name="description" content="How to contact users on a remote Gateway repeater via D-STAR original / node routing." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
-
 <body>
-    <h1>Responding via a Gateway with D-STAR Routing</h1>
-    <p>
-        Sometimes called "original routing", "node routing", or "port 
-        linking", this is a way of configuring repeaters to connect to 
-        each other 1:1 without the need for a reflector. It is the 
-        repeater level equivalent of <a href="/operation/callsignrouting.html">callsign routing</a>, but instead of 
-        linking one user to another, it allows a user to be heard by 
-        all users of a repeater. Users need to use callsign routing or 
-        to zone routing to respond, so it's important to mention what 
-        node and repeater you are using as your gateway so that others
-        can configure their radios to respond.
-    </p>
-    <p>
-        To make it easier for users of the remote repeater to respond
-        one might to use <a href="repeaterlinking.html">repeater linking</a> which would only require users 
-        to be using the usual gateway CQ configuration to respond.
-    </p>
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 1.5rem; text-align: left;">
+            <span class="page-kicker">Operation</span>
+            <h1>Responding via a Gateway with D-STAR Routing</h1>
+        </header>
+
+
+        <div class="content-item">
+            <p>
+                Sometimes called "original routing", "node routing", or "port
+                linking", this is a way of configuring repeaters to connect to
+                each other 1:1 without the need for a
+                <a href="/guides/reflectors-and-nets.html">reflector</a>. It is the
+                repeater level equivalent of <a href="/operation/callsignrouting.html">callsign routing</a>, but instead of
+                linking one user to another, it allows a user to be heard by
+                all users of a repeater. Users need to use callsign routing or
+                to zone routing to respond, so it's important to mention what
+                node and repeater you are using as your
+                <a href="/guides/gateways.html">gateway</a> so that others
+                can configure their radios to respond
+                (<a href="/guides/registration.html">registration</a> required).
+            </p>
+            <p>
+                To make it easier for users of the remote repeater to respond
+                one might to use <a href="repeaterlinking.html">repeater linking</a> which would only require users
+                to be using the usual gateway CQ configuration to respond.
+                Field names: <a href="/guides/call-sign-mnemonics.html">YOUR / RPT1 / RPT2 mnemonics</a>.
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

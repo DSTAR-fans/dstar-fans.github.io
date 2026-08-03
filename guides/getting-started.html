@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>Getting Started with D-STAR — D-STAR Fans</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/guides/getting-started.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="description" content="Configure MY call sign, suffix, and TX message for D-STAR—the first steps every operator should take." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
+</head>
+
+<body>
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a class="active" href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap page-content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/guides/">Guides</a>
+            <span aria-hidden="true">/</span>
+            <span>Getting started</span>
+        </nav>
+
+            <nav class="guide-subnav" aria-label="Guides">
+                <ul>
+                    <li><a href="/guides/">All guides</a></li>
+                    <li><a href="/guides/getting-started.html" class="active">Getting started</a></li>
+                    <li><a href="/guides/simplex.html">Simplex</a></li>
+                    <li><a href="/guides/registration.html">Gateway registration</a></li>
+                    <li><a href="/guides/gateways.html">Gateway repeaters</a></li>
+                    <li><a href="/guides/reflectors-and-nets.html">Reflectors & nets</a></li>
+                    <li><a href="/guides/d-prs.html">D-PRS & APRS</a></li>
+                    <li><a href="/guides/software.html">Software</a></li>
+                    <li><a href="/guides/call-sign-mnemonics.html">Call sign mnemonics</a></li>
+                    <li><a href="/guides/training.html">Training & videos</a></li>
+                </ul>
+            </nav>
+
+        <header class="hero" style="padding-bottom: 1.25rem; text-align: left;">
+            <span class="page-kicker">Guide</span>
+            <h1>Getting started</h1>
+            <p class="page-intro">Call sign (MY), suffix, TX message, and why every kerchunk carries your ID.</p>
+        </header>
+
+
+            <div class="content-item">
+                <p>
+                    <a href="https://grokipedia.com/page/D-STAR" target="_blank" rel="noopener">D-STAR</a>
+                    (Digital Smart Technologies for Amateur Radio) is an open digital voice and data protocol established
+                    by the
+                    <a href="https://www.jarl.org/English/" target="_blank" rel="noopener">Japan Amateur Radio League (JARL)</a>.
+                    Equipment and official product information are widely available from
+                    <a href="https://www.icomamerica.com/lineup/amateur/D-STAR/" target="_blank" rel="noopener">Icom America</a>
+                    and
+                    <a href="https://www.icomjapan.com/" target="_blank" rel="noopener">Icom Japan</a>.
+                </p>
+                <p>
+                    The very first thing to do when working with
+                    <a href="https://www.icomamerica.com/explore/d-star/" target="_blank" rel="noopener">D-STAR</a>
+                    is to configure your station values.
+                    These include your call sign in the <b>MY</b> value on your radio (including a short suffix), and a message.
+                    With D-STAR, every transmission includes your call-sign, so even a quick "<a
+                        href="https://www.k0nr.com/wordpress/2012/12/proper-kerchunking/" target="_blank"
+                        rel="noopener">kerchunk</a>" on the air,
+                    repeater, or <a href="/guides/reflectors-and-nets.html">reflector</a> will be sent to other D-STAR users who will be able to see this info in their RX
+                    history log.
+                </p>
+                <p>
+                    With D-STAR, this can be very handy because some radios include text-to-speech functions
+                    that announce the call-sign of transmissions too short to include the call-sign in a voice transmission.
+                    Also, if a listener is not focused on the radio at the moment a transmission is recieved, they can go back
+                    and see who was calling.
+                </p>
+                <p>
+                    When operators make a QSO they <a href="http://www.roblocher.com/whitepapers/dstar.html" target="_blank"
+                        rel="noopener">start</a> with their call sign, and often report on signal strength, their location, and
+                    equipment used.
+                    After setting your call sign, D-STAR makes it easy to share some of this other info as well.
+                    Most D-STAR radios support a "suffix" which is a 4-character value following a slash at the end of the
+                    call-sign.
+                    The convention is to enter the model number of your radio such as <b>/92AD</b>, <b>/52A</b>, or
+                    <b>/5100</b>.
+                    This will make it easy for those familiar with these radios to understand your hardware capabilities - such
+                    as sending and recieving <a href="/capabilities/chat.html">images and text</a>.
+                    Some sites with <a href="http://dstarinfo.com/first-steps.aspx" target="_blank" rel="noopener">D-STAR Info
+                        on First Steps</a> advise putting your name in the suffix –
+                    but this only works for people with four-letter-word names and shorter.
+                    You can also look at <a href="https://www.dstar.guru/#most-used-suffix-of-the-year" target="_blank"
+                        rel="noopener">reflector statistics</a> to get an idea
+                    of the popularity of different radio hardware and modes being used on D-STAR and see how others are using
+                    this feature.
+                    Some suffixes like <b>/DMR</b> or <b>/PNUT</b> refer to cross-mode links or software being used to access
+                    the D-STAR system instead of a radio.
+                </p>
+                <p>
+                    While location data can be <a href="/guides/d-prs.html">shared from GPS</a>, oparators often
+                    use the TX Message value to share their name and general location,
+                    keeping in mind that via reflectors, people anywhere in the world might see this message.
+                    One example might be "<i>Mark in Galena, Ohio</i>" keeping in mind that there is a 20 character limit on the
+                    message field.
+                </p>
+                <p>
+                    Many radios allow several call signs and messages to be stored allowing them to be changed frequently to
+                    reflect the user's current status.
+                    This can allow a great deal of information to be sent with brief kerchunks or long-winded ragchew
+                    transmissions just the same.
+                </p>
+                <p>
+                    One might think themselves clever to enter some made-up value as their call-sign on D-STAR.
+                    This is possible, but only valid call-signs may be used to access the network of D-STAR gateways.
+                    Once <a href="/guides/registration.html">registered</a> with your local
+                    <a href="/guides/gateways.html">gateway</a>, your call sign is your passport to the wider world, so it pays to
+                    ensure this value is set correctly from the start.
+                </p>
+                <p>
+                    Next: <a href="/guides/registration.html">register for gateway access</a>, try
+                    <a href="/guides/simplex.html">simplex</a>, review
+                    <a href="/guides/call-sign-mnemonics.html">YOUR / RPT1 / RPT2 mnemonics</a>, or watch
+                    <a href="/videos.html">call sign setup videos</a>.
+                </p>
+            </div>
+
+
+            <nav class="guide-related" aria-label="Related guides">
+                <span></span>
+                <a href="/guides/">All guides</a>
+                <a class="guide-related-next" href="/guides/simplex.html">Simplex <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </nav>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

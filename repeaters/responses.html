@@ -1,47 +1,90 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>🗼 D-STAR Fans / Repeaters / Response Messages</title>
-    <link rel="icon" type="/image/x-icon" href="/images/favicon.ico">
+    <title>Repeater Response Messages — D-STAR Fans</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="canonical" href="https://dstar.fans/repeaters/responses.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-
-    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <meta name="description" content="What RPT? and UR? mean on D-STAR repeaters and how to interpret them." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
-
 <body>
-    <h1>Responses</h1>
-    <div class="content-item">
-    <h2>RPT?</h2>
-    <p>This response is typically seen when the repeater does not recognize 
-        what was sent as a valid callsign routing command. 
-        This indicates normal repeater operation and if when using a repeater 
-        or reflector, can be treated as a response indicating that the station
-        was heard, similar to the beep response of a traditional FM repeater.
-    </p>
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 1.5rem; text-align: left;">
+            <span class="page-kicker">Repeaters</span>
+            <h1>Response messages</h1>
+        </header>
+
+
+        <div class="content-item">
+            <h2>RPT?</h2>
+            <p>This response is typically seen when the repeater does not recognize
+                what was sent as a valid callsign routing command.
+                This indicates normal repeater operation and if when using a repeater
+                or reflector, can be treated as a response indicating that the station
+                was heard, similar to the beep response of a traditional FM repeater.
+            </p>
+        </div>
+
+        <div class="content-item">
+            <h2>UR?</h2>
+            <p>
+                The UR? response in D-STAR means that your signal reached the access
+                repeater and your call was successfully sent from the destination
+                repeater. This confirms that your transmission was received by
+                the system. You should get a reply call from the station you are trying
+                to contact, or hear other stations on the reflector you are linked to.
+                If you do not get a UR? response, it means that your signal did not
+                reach the access repeater, or the destination repeater did not recognize
+                your call sign. You may need to check your settings (starting with
+                <a href="/guides/registration.html">verifying your registration</a> if you
+                have not yet done so) or try a different repeater or reflector.
+            </p>
+        </div>
     </div>
 
-    <div class="content-item">
-    <h2>UR?</h2>
-    <p>
-        The UR? response in D-STAR means that your signal reached the access 
-        repeater and your call was successfully sent from the destination 
-        repeater. This confirms that your transmission was received by 
-        the system. You should get a reply call from the station you are trying 
-        to contact, or hear other stations on the reflector you are linked to. 
-        If you do not get a UR? response, it means that your signal did not 
-        reach the access repeater, or the destination repeater did not recognize 
-        your call sign. You may need to check your settings (starting with 
-        <a href="/index.html#registration">verifying your registration</a> if you 
-        have not yet done so) or try a different repeater or reflector.
-    </p>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
+
 </body>
+
 </html>

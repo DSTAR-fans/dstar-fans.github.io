@@ -1,6 +1,8 @@
 {
-  "name": "D-Star Fans",
-  "short_name": "DStar.fans",
+  "name": "D-STAR Fans",
+  "short_name": "DSTAR.fans",
+  "description": "Guides, news, and community resources for D-STAR amateur radio.",
+  "start_url": "/",
   "icons": [
     {
       "src": "/images/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone"
 }

@@ -1,89 +1,139 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>🗼 D-STAR Fans / W8CMH Repeater</title>
-    <link rel="icon" type="/image/x-icon" href="/images/favicon.ico">
+    <title>W8CMH Repeater — D-STAR Fans</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="canonical" href="https://dstar.fans/repeaters/w8cmh.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-
-    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <meta name="description" content="How to use the W8CMH D-STAR repeater: dashboards, local use, and gateway bridging." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
-
 <body>
-    <h1>W8CMH Repeater</h1>
-    <p><strong>Warning:</strong> W8CMH C (2m port) is currently offline awaiting repairs. No ETA as of 2026-04-06.</p>
 
-    <div class="content-item">
-        <h2>Dashboards</h2>
-        <p>
-            Dashboards allow you to monitor the repeater activity via the internet.
-            They allow you to see how the D-STAR repeater is linked, who has been active on the repeater,
-            and also for testing to determine if the repeater recieved your transmission.
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 1.5rem; text-align: left;">
+            <span class="page-kicker">Repeaters</span>
+            <h1>W8CMH Repeater</h1>
+        </header>
+
+
+        <p class="status-note" style="border-left-color: var(--danger); background: rgba(244,33,46,0.08);">
+            ⚠️ <strong>Warning:</strong> W8CMH C (2m port) is currently offline awaiting repairs. No ETA as of 2026-04-06.
         </p>
 
-        <p>
-            <a href="http://w8cmh.dstargateway.org/" target="_blank" rel="noopener">W8CMH DPLUS Dashboard</a>
-            <!-- https://w8cmh.no-ip.org/ -->
-        </p>
-        <p>
-            <a href="https://www.dstarusers.org/viewrepeater.php?system=W8CMH" target="_blank" rel="noopener">Dstar
-                Users Dashboard</a>
-        </p>
+        <div class="content-item">
+            <h2>Dashboards</h2>
+            <p>
+                Dashboards allow you to monitor the repeater activity via the internet.
+                They allow you to see how the D-STAR repeater is linked, who has been active on the repeater,
+                and also for testing to determine if the repeater recieved your transmission.
+            </p>
+            <p>
+                <a href="http://w8cmh.dstargateway.org/" target="_blank" rel="noopener">W8CMH DPLUS Dashboard</a>
+                · <a href="/repeaters/columbus.html">Embedded Columbus dashboard</a>
+            </p>
+            <p>
+                <a href="https://www.dstarusers.org/viewrepeater.php?system=W8CMH" target="_blank" rel="noopener">Dstar
+                    Users Dashboard</a>
+                · <a href="/guides/reflectors-and-nets.html#lastHeard">Last Heard overview</a>
+            </p>
+        </div>
+
+        <div class="content-item">
+            <h2>Local Repeater Use</h2>
+            <p>
+                The W8CMH repeater has two ports. Port B (70cm), and Port C (2m).
+                Users can communicate with other users of the same port by setting the YOUR value to CQCQCQ.
+                For example, on W8CMH B if you announce your call sign and that you are monitoring,
+                other users of W8CMH B would be able to hear you and you would be able to hear them if they respond.
+            </p>
+            <p>
+                It's important to note that W8CMH C users would not be able to hear you without configuring your radio to
+                use the <a href="/guides/gateways.html">gateway feature</a> to bridge the two ports.
+                Ensure your MY call sign is set correctly first—see
+                <a href="/guides/getting-started.html">getting started</a>.
+            </p>
+        </div>
+
+        <div class="content-item">
+            <h2>Local Repeater Gateway Use</h2>
+            <p>
+                Sometimes users need to be heard on both ports of the repeater at the same time.
+                One common situation for this is a net as the repeater's different ports may be more
+                or less accessible due to signal propogation from ceartain locations.
+                Using both ports would allow the greatest number of people to participate.
+            </p>
+            <p>
+                For example, to communicate from W8CMH B to W8CMH C, one would configure their radio as follows
+                (<a href="/guides/call-sign-mnemonics.html">YOUR / RPT1 / RPT2 explained</a>):
+            </p>
+            <code>
+YOUR:&#9;/W8CMH▪C<br>
+RPT1:&#9;W8CMH▪▪B<br>
+RPT2:&#9;W8CMH▪▪G<br>
+<em>"▪" represents a space, which is an important detail</em>
+            </code>
+            <p>
+                In this mode, since you could be heard on both ports,
+                it's a good idea to inform listeners which port you are accessing (in the example above, it is Port B).
+                One draw-back of this approach is that if anyone wishes to use the other port for some other purpose
+                (such as <a href="/guides/reflectors-and-nets.html">linking to a reflector</a>, or
+                <a href="/capabilities/chat.html">sending images or text messages</a>) this would conflict of your use of the
+                repeater.
+            </p>
+            <p>
+                It could be useful for calling and initiating a contact - then switching to the node the other user is
+                accessing and switching to local CQCQCQ operation.
+                It could also be handy in the event that one user is able to get in on Port B, but the other is only able to
+                access the repeater via Port C.
+                This would allow both users to communicate with each other.
+                For a quick reply to a gateway station, use
+                <a href="/operation/callsignrouting.html">callsign routing (RX→CS)</a>.
+            </p>
+        </div>
     </div>
 
-    <div class="content-item">
-        <h2>Local Repeater Use</h2>
-        <p>
-            The W8CMH repeater has two ports. Port B (70cm), and Port C (2m).
-            Users can communicate with other users of the same port by setting the YOUR value to CQCQCQ.
-            For example, on W8CMH B if you announce your call sign and that you are monitoring,
-            other users of W8CMH B would be able to hear you and you would be able to hear them if they respond.
-        </p>
-        <p>
-            It's important to note that W8CMH C users would not be able to hear you without configuring your radio to
-            use the gateway feature to bridge the two ports.
-        </p>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
 
-    <div class="content-item">
-        <h2>Local Repeater Gateway Use</h2>
-        <p>
-            Sometimes users need to be heard on both ports of the repeater at the same time.
-            One common situation for this is a net as the repeater's different ports may be more
-            or less accessible due to signal propogation from ceartain locations.
-            Using both ports would allow the greatest number of people to participate.
-        </p>
-        <p>
-            For example, to communicate from W8CMH B to W8CMH C, one would configure their radio as follows:
-        </p>
-        <code>
-        YOUR:	/W8CMH▪C<br />
-        RPT1:	W8CMH▪▪B<br />
-        RPT2:	W8CMH▪▪G<br />
-        <i>"▪" represents a space, which is an important detail</i>
-    </code>
-        <p>
-            In this mode, since you could be heard on both ports,
-            it's a good idea to inform listeners which port you are accessing (in the example above, it is Port B).
-            One draw-back of this approach is that if anyone wishes to use the other port for some other purpose
-            (such as linking to a reflector, or sending images or text messages) this would conflict of your use of the
-            repeater.
-        </p>
-        <p>
-            It could be useful for calling and initiating a contact - then switching to the node the other user is
-            accessing and switching to local CQCQCQ operation.
-            It could also be handy in the event that one user is able to get in on Port B, but the other is only able to
-            access the repeater via Port C.
-            This would allow both users to communicate with each other.
-        </p>
-    </div>
 </body>
 
 </html>

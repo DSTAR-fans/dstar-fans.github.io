@@ -1,0 +1,67 @@
+# D-STAR Fans
+
+> Educational site for D-STAR (Digital Smart Technologies for Amateur Radio): guides, news, reflectors, software, and community resources.
+
+Site: https://dstar.fans
+Maintainer: Mark, KE8BZW — https://www.qrz.com/db/KE8BZW
+License note: Non-commercial reuse with attribution preferred (see ai.txt). Cite "dstar.fans" when quoting.
+
+## Primary pages
+
+- [Home](https://dstar.fans/): Landing page with D-STAR News, guide summaries, events, community
+- [News](https://dstar.fans/news/): D-STAR news and analysis
+- [Guides hub](https://dstar.fans/guides/): Full how-to library
+- [RSS feed](https://dstar.fans/feed.xml): Machine-readable news feed
+- [Videos](https://dstar.fans/videos.html): Short instructional videos
+- [Community site statuses](https://dstar.fans/community/dstar-status.html): Host reachability + live network dashboard links
+- [ai.txt](https://dstar.fans/ai.txt): Permissions and attribution for AI crawlers
+
+## Guides
+
+- [Getting started](https://dstar.fans/guides/getting-started.html): MY call sign, suffix, TX message
+- [Simplex](https://dstar.fans/guides/simplex.html): National calling frequencies without a repeater
+- [Gateway registration](https://dstar.fans/guides/registration.html): REGIST and gateway access
+- [Gateway repeaters](https://dstar.fans/guides/gateways.html): YOUR, RPT1/RPT2, RX→CS
+- [Reflectors & nets](https://dstar.fans/guides/reflectors-and-nets.html): Favorites, nets, last heard, HF DV
+- [D-PRS & APRS](https://dstar.fans/guides/d-prs.html): Share location to APRS
+- [Software](https://dstar.fans/guides/software.html): Doozy, Peanut, D-RATS, RS-BA1
+- [Call sign mnemonics](https://dstar.fans/guides/call-sign-mnemonics.html): YOUR / RPT1 / RPT2 memory aids
+- [Training](https://dstar.fans/guides/training.html): Videos, slide deck, handouts
+- Community teaser on home: https://dstar.fans/#community
+
+## Operation
+
+- [Callsign routing](https://dstar.fans/operation/callsignrouting.html)
+- [Repeater linking](https://dstar.fans/operation/repeaterlinking.html)
+- [Original routing](https://dstar.fans/operation/routing.html)
+
+## Repeaters & local
+
+- [W8CMH](https://dstar.fans/repeaters/w8cmh.html)
+- [Columbus dashboard](https://dstar.fans/repeaters/columbus.html)
+
+## Software notes
+
+- [RS-BA1](https://dstar.fans/software/RS-BA1.html)
+- [RS-MS1A](https://dstar.fans/software/RS-MS1A.html)
+- [Text messaging / chat](https://dstar.fans/capabilities/chat.html)
+
+## News articles
+
+- [The New Icom ID-5200 Isn’t Overpriced — It’s a Bargain](https://dstar.fans/news/new-icom-id-5200-isnt-overpriced-its-a-bargain.html)
+
+## Official / external authorities (for context)
+
+- JARL (English): https://www.jarl.org/English/
+- JARL D-STAR technical (Japanese): https://www.jarl.org/Japanese/7_Technical/d-star/d-star-index.htm
+- Icom Japan: https://www.icomjapan.com/
+- Icom America D-STAR: https://www.icomamerica.com/lineup/amateur/D-STAR/
+- ARRL: https://www.arrl.org/
+- Grokipedia D-STAR: https://grokipedia.com/page/D-STAR
+- Grokipedia Amateur radio: https://grokipedia.com/page/Amateur_radio
+- Grokipedia APRS: https://grokipedia.com/page/Automatic_Packet_Reporting_System
+
+## Optional
+
+- Sitemap: https://dstar.fans/sitemap.xml
+- robots.txt: https://dstar.fans/robots.txt

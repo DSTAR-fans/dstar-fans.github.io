@@ -1,65 +1,105 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>🗼 D-STAR Fans / Software / RS-BA1</title>
+    <title>RS-BA1 Remote Control — D-STAR Fans</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/software/RS-BA1.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="description" content="How to use the Icom RS-BA1 software to operate D-STAR!" />
-    <META NAME="geo.position" CONTENT="40.21536041298822; -82.87969925125871">
-    <META NAME="geo.placename" CONTENT="Galena, OH">
-    <META NAME="geo.region" CONTENT="US">
-
-    <!-- Clarity tracking code for https://dstar.fans/ -->
+    <meta name="description" content="How to use the Icom RS-BA1 IP remote control software for D-STAR operation." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
-
 <body>
-    <h1>RS-BA1 Remote Control</h1>
-    
-    <div class="content-item">
-    <h2>About the RS-BA1 Software</h2>
-    <p>
-        The <a href="https://www.icomamerica.com/lineup/options/RS-BA1_Version2/" target="_blank">Icom RS-BA1 IP Remote Control Software</a>
-        allows users of select Icom radios to remotely control their radios from across the room, or across the world.
-        While the upgrades are free downloads from the Icom website, the base software costs about $150 as of 2023-01-31.
-    </p>
-    <p>
-        At first I thought it seemed expensive, but it's one of the more affordable Icom accessories and the capabilities 
-        it unlocks are unsurpassed.
-    </p>
-</div>
 
-<div class="content-item">
-    <h2>Using the RS-BA1 Software for D-STAR</h2>
-    <p>
-        While use of the RS-BA1 software for analog radio functions is well documented in the manual, 
-        I had some trouble finding instructions for how to use the D-STAR functions of my radios.
-    </p>
-    <p>
-        To access these instructions, open the RS-BA1 Remote Control app and select Help in the file menu (or press F1), 
-        then select the <b>Search tab</b> and search for <b>DV</b>.
-    </p>
-    <p>
-        If you just want to expierment without reading the manual, you can get to the DV menu by selecting <b>View > DV</b> 
-        in the file menu of the RS-BA1 Remote Cotnrol software.  The <b>Memory Channel Editor</b> contains the list of repeaters, 
-        frequencies, and offsets; as well as <b>Call Sign</b> settings.
-    </p>
-    <p>
-        If you're familiar with manually setting YOUR, RPT1, and RPT2 values in your radio, this will be similar.  
-        If not, you may find the <a href="http://www.dstarinfo.com/dstar-web-calculator.aspx" target="_blank">D-STAR Calculator</a> 
-        hosted by <a href="http://www.dstarinfo.com/" target="_blank">dstarinfo.com</a> to be helpful for determining these values.
-    </p>
-    <p>
-        These settings can be viewed from your radio in the CS or Call Sign menu at any time, but understanding how to set them manually will remove some of the mystery of D-STAR operations.
-    </p>
-    <p>
-        When editing the Call Sign (CS) values, it's a good idea to keep these <a href="/index.html#memonics" target="_blank">D-STAR memonics</a> in mind.
-    </p>
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 1.5rem; text-align: left;">
+            <span class="page-kicker">Software</span>
+            <h1>RS-BA1 Remote Control</h1>
+        </header>
+
+
+        <div class="content-item">
+            <h2>About the RS-BA1 Software</h2>
+            <p>
+                The <a href="https://www.icomamerica.com/lineup/options/RS-BA1_Version2/" target="_blank" rel="noopener">Icom RS-BA1 IP Remote Control Software</a>
+                allows users of select Icom radios to remotely control their radios from across the room, or across the world.
+                While the upgrades are free downloads from the Icom website, the base software costs about $150 as of 2023-01-31.
+            </p>
+            <p>
+                At first I thought it seemed expensive, but it's one of the more affordable Icom accessories and the capabilities
+                it unlocks are unsurpassed.
+            </p>
+        </div>
+
+        <div class="content-item">
+            <h2>Using the RS-BA1 Software for D-STAR</h2>
+            <p>
+                While use of the RS-BA1 software for analog radio functions is well documented in the manual,
+                I had some trouble finding instructions for how to use the D-STAR functions of my radios.
+            </p>
+            <p>
+                To access these instructions, open the RS-BA1 Remote Control app and select Help in the file menu (or press F1),
+                then select the <b>Search tab</b> and search for <b>DV</b>.
+            </p>
+            <p>
+                If you just want to expierment without reading the manual, you can get to the DV menu by selecting <b>View &gt; DV</b>
+                in the file menu of the RS-BA1 Remote Cotnrol software.  The <b>Memory Channel Editor</b> contains the list of repeaters,
+                frequencies, and offsets; as well as <b>Call Sign</b> settings.
+            </p>
+            <p>
+                If you're familiar with manually setting YOUR, RPT1, and RPT2 values in your radio, this will be similar.
+                If not, you may find the <a href="http://www.dstarinfo.com/dstar-web-calculator.aspx" target="_blank" rel="noopener">D-STAR Calculator</a>
+                hosted by <a href="http://www.dstarinfo.com/" target="_blank" rel="noopener">dstarinfo.com</a> to be helpful for determining these values.
+            </p>
+            <p>
+                These settings can be viewed from your radio in the CS or Call Sign menu at any time, but understanding how to set them manually will remove some of the mystery of D-STAR operations.
+            </p>
+            <p>
+                When editing the Call Sign (CS) values, it's a good idea to keep these <a href="/guides/call-sign-mnemonics.html">D-STAR memonics</a> in mind.
+            </p>
+        </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
+
 </body>
+
 </html>

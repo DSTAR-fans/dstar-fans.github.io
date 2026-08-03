@@ -2,47 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Columbus D-STAR Dashboard</title>
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>Columbus D-STAR Dashboard — D-STAR Fans</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/repeaters/columbus.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="description" content="Live Columbus-area D-STAR gateway dashboard embed (W8CMH)." />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
     <style>
-        body {
-            background-color: #64748b;
-        }
-
-        .container {
+        .dashboard-shell { min-height: 100vh; display: flex; flex-direction: column; }
+        .dashboard-shell .site-nav { flex: 0 0 auto; }
+        .dashboard-toolbar {
+            flex: 0 0 auto;
             display: flex;
             flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.65rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-elevated);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .dashboard-frame {
+            flex: 1 1 auto;
             width: 100%;
-            height: 100vh;
-        }
-
-        .content {
-            flex: 1 1 50%;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        @media (max-width: 1200px) {
-            .content {
-                flex: 1 1 100%;
-            }
+            min-height: 70vh;
+            border: 0;
+            background: var(--bg);
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div id="w8cmh" class="content">
-            <!-- Embed the W8CMH page here -->
-            <iframe src="http://w8cmh.dstargateway.org/" id="w8cmh-iframe"></iframe>
+    <div class="dashboard-shell">
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
         </div>
+    </nav>
+        <div class="dashboard-toolbar">
+            <span>Columbus D-STAR live dashboard (W8CMH gateway)</span>
+            <span>
+                <a href="http://w8cmh.dstargateway.org/" target="_blank" rel="noopener">Open source site</a>
+                · <a href="/repeaters/w8cmh.html">W8CMH guide</a>
+            </span>
+        </div>
+        <iframe class="dashboard-frame" src="http://w8cmh.dstargateway.org/" title="W8CMH D-STAR gateway dashboard" loading="lazy"></iframe>
     </div>
 </body>
 

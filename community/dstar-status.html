@@ -3,140 +3,496 @@
 
 <head>
     <link href="/styles/style.css" rel="stylesheet">
-    <title>D-STAR Community Status</title>
+    <title>D-STAR Community Site Statuses — D-STAR Fans</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://dstar.fans/community/dstar-status.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/scripts/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="description" content="Check the status of key sites in the D-STAR community." />
+    <meta name="description"
+        content="Live links and honest host reachability checks for D-STAR community sites, last-heard activity, gateway registration, and popular reflector dashboards." />
     <meta name="keywords"
-        content="D-STAR, DSTAR, D-STAR community, D-STAR status, D-STAR sites, ham radio, amateur radio, digital radio" />
+        content="D-STAR status, D-STAR last heard, D-STAR gateway, D-STAR reflectors, DSTAR.fans, dstarusers, REGIST" />
     <meta name="author" content="DSTAR.fans" />
-    <meta property="og:title" content="D-STAR Community Status" />
-    <meta property="og:description" content="Check the status of key sites in the D-STAR community." />
-    <meta property="og:image" content="/images/og-image.png" />
-    <meta property="og:url" content="https://dstar.fans/status" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="D-STAR Community Status" />
-    <meta name="twitter:description" content="Check the status of key sites in the D-STAR community." />
-    <meta name="twitter:image" content="/images/twitter-image.png" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="D-STAR Community Site Statuses" />
+    <meta property="og:description"
+        content="Live network dashboards and host reachability for key D-STAR community sites." />
+    <meta property="og:url" content="https://dstar.fans/community/dstar-status.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://dstar.fans/images/android-chrome-512x512.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="D-STAR Community Site Statuses" />
+    <meta name="twitter:description"
+        content="Live network dashboards and host reachability for key D-STAR community sites." />
+    <meta name="twitter:image" content="https://dstar.fans/images/android-chrome-512x512.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "D-STAR Community Site Statuses",
+      "url": "https://dstar.fans/community/dstar-status.html",
+      "description": "Live links and host reachability checks for D-STAR community sites and network dashboards.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "D-STAR Fans",
+        "url": "https://dstar.fans"
+      }
+    }
+    </script>
+
     <style>
-        .statusButton {
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            color: white;
-            font-size: 1em;
-            margin: 10px 0;
-            background-color: gray;
+        .status-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .hiddenIframe {
-            display: none;
+        .status-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        .statusText {
-            margin-top: 20px;
-            font-size: 1em;
+        .status-dot {
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: 50%;
+            display: inline-block;
         }
 
-        .statusText .green {
-            color: green;
-            font-weight: bold;
+        .status-dot.up { background: #00ba7c; }
+        .status-dot.down { background: #f4212e; }
+        .status-dot.checking { background: #ff7a00; }
+        .status-dot.unknown { background: #71767b; }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.85rem;
+            margin: 1rem 0 1.5rem;
         }
 
-        .statusText .orange {
-            color: orange;
-            font-weight: bold;
+        .status-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
         }
 
-        .statusText .red {
-            color: red;
-            font-weight: bold;
+        .status-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .status-card h3 {
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .status-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.55rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+
+        .status-badge.up {
+            color: #00ba7c;
+            background: rgba(0, 186, 124, 0.12);
+            border-color: rgba(0, 186, 124, 0.35);
+        }
+
+        .status-badge.down {
+            color: #f4212e;
+            background: rgba(244, 33, 46, 0.12);
+            border-color: rgba(244, 33, 46, 0.35);
+        }
+
+        .status-badge.checking {
+            color: #ff7a00;
+            background: rgba(255, 122, 0, 0.12);
+            border-color: rgba(255, 122, 0, 0.35);
+        }
+
+        .status-badge.unknown {
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border);
+        }
+
+        .status-card p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .status-card .status-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        .status-card a.status-open {
+            margin-top: 0.35rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        .status-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--accent);
+            padding: 0.65rem 0 0.65rem 1rem;
+            margin: 1rem 0 1.75rem;
+            background: rgba(29, 155, 240, 0.06);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .dashboard-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .dashboard-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            text-decoration: none;
+            transition: border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .dashboard-list a:hover {
+            border-color: rgba(29, 155, 240, 0.4);
+            background: var(--bg-card-hover);
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .dashboard-list .dash-name {
+            font-weight: 700;
+        }
+
+        .dashboard-list .dash-desc {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .dashboard-list .dash-go {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
     </style>
-    
+
     <!-- Clarity tracking code for https://dstar.fans/ -->
     <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt"; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "ex0kah23lx");</script>
 </head>
 
 <body>
-    <header>
-        <h1>D-STAR Community Status</h1>
-    </header>
-    <main>
-        <section>
-            <p>Check the status of the D-STAR community sites:</p>
-            <button id="dstarFansButton" class="statusButton" data-original-text="DSTAR.fans">Check DSTAR.fans</button>
-            <button id="dstarInfoButton" class="statusButton" data-original-text="D-STAR Info">Check D-STAR
-                Info</button>
-            <button id="dstarUsersButton" class="statusButton" data-original-text="D-STAR Users">Check D-STAR
-                Users</button>
-            <button id="icomButton" class="statusButton" data-original-text="Icom America">Check Icom America</button>
-            <button id="icomUKButton" class="statusButton" data-original-text="Icom UK">Check Icom UK</button>
-            <button id="icomJapanButton" class="statusButton" data-original-text="Icom Japan">Check Icom Japan</button>
-            <iframe id="dstarInfoIframe" class="hiddenIframe"></iframe>
-            <iframe id="dstarUsersIframe" class="hiddenIframe"></iframe>
-            <iframe id="icomIframe" class="hiddenIframe"></iframe>
-            <iframe id="icomUKIframe" class="hiddenIframe"></iframe>
-            <iframe id="icomJapanIframe" class="hiddenIframe"></iframe>
-            <iframe id="dstarFansIframe" class="hiddenIframe"></iframe>
-            <p class="statusText">
-                Welcome to the D-STAR Community Status Page, where you can instantly see the operational status of
-                popular D-STAR sites. Each button's color indicates the status at page load: <span
-                    class="green">Green</span> for fully operational, <span class="orange">Yellow</span> when the scan
-                is still underway (up to 10 seconds), and <span class="red">Red</span> for sites with issues or offline.
-                Feel free to return here if you suspect a site might be down.
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🗼</span>
+                <span>D-STAR Fans</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" data-nav-links>
+                <li><a href="/#news">News</a></li>
+                <li><a href="/news/">All news</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrap">
+        <header class="hero" style="padding-bottom: 1.5rem;">
+            <span class="section-kicker">Community</span>
+            <h1>D-STAR site statuses</h1>
+            <p class="hero-lead">
+                Host reachability for key community websites, plus live network dashboards operators actually use.
             </p>
-            <p><a href="https://dstar.fans">Back to DSTAR.fans Home Page</a></p>
+        </header>
+
+        <section class="section" aria-labelledby="probe-heading">
+            <h2 id="probe-heading">Community website reachability</h2>
+            <p class="status-note">
+                Browsers block reading another site’s HTTP status for security reasons. These checks use a
+                <strong>network-level probe</strong> (HTTPS connection attempt with timeout). Results mean
+                <em>host responded</em> or <em>no response</em>—not application health, RF coverage, or gateway load.
+                They are not a substitute for the live dashboards below.
+            </p>
+            <div class="status-legend" aria-hidden="true">
+                <span><i class="status-dot up"></i> Host responding</span>
+                <span><i class="status-dot checking"></i> Checking…</span>
+                <span><i class="status-dot down"></i> No response / timeout</span>
+            </div>
+            <div class="status-grid" id="status-grid" role="list"></div>
+            <p>
+                <button type="button" class="btn btn-secondary" id="recheck-btn">
+                    <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> Re-check hosts
+                </button>
+            </p>
         </section>
-    </main>
+
+        <section class="section" aria-labelledby="network-heading">
+            <h2 id="network-heading">Live D-STAR network dashboards</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                These sources show real operational data (last heard, linked modules, gateway registration). Open them
+                for ground truth—this page does not scrape or invent their numbers.
+            </p>
+            <ul class="dashboard-list">
+                <li>
+                    <a href="https://www.dstarusers.org/lastheard.php" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">D-STAR Users — Last Heard</span>
+                            <span class="dash-desc">Stations heard via gateways and hotspots worldwide</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.dstarusers.org/" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">D-STAR Users — Gateways &amp; maps</span>
+                            <span class="dash-desc">Gateway directory and network overview</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://regist.dstargateway.org/Dstar.do" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">D-STAR Gateway System (REGIST)</span>
+                            <span class="dash-desc">Official gateway registration portal</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.dstarinfo.com/maps-by-region.aspx" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">D-STAR Info — Maps by region</span>
+                            <span class="dash-desc">Repeater / gateway maps and region listings</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://ref001.dstargateway.org/" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">REF001 — International</span>
+                            <span class="dash-desc">Reflector dashboard (module activity / links)</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://ref030.dstargateway.org/" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">REF030 — Southeast USA / HF DV</span>
+                            <span class="dash-desc">Reflector dashboard commonly used for HF coordination</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://ref038.dstargateway.org/" target="_blank" rel="noopener">
+                        <span>
+                            <span class="dash-name">REF038 — Ohio</span>
+                            <span class="dash-desc">Reflector dashboard (nets &amp; calling modules)</span>
+                        </span>
+                        <span class="dash-go">Open <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <p style="margin: 2rem 0;"><a href="/">← Back to DSTAR.fans home</a></p>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/videos.html">Videos</a></li>
+                <li><a href="/#community">Community</a></li>
+            </ul>
+            <p>© D-STAR Fans · Maintained by <a href="https://www.qrz.com/db/KE8BZW">KE8BZW</a></p>
+            <p class="footer-meta"><a href="/feed.xml">RSS feed</a></p>
+        </div>
+    </footer>
+
     <script>
-        // Function to check the status of a site using an iframe
-        function checkSiteStatus(url, buttonId, iframeId, timeoutDuration) {
-            const button = document.getElementById(buttonId);
-            const iframe = document.getElementById(iframeId);
-            const originalText = button.getAttribute('data-original-text');
-
-            // Indicate that the check is in progress
-            button.style.backgroundColor = 'orange';
-            button.textContent = `Checking ${originalText}...`;
-
-            // Set a timeout to handle slow responses
-            const timeout = setTimeout(() => {
-                button.style.backgroundColor = 'red';
-                button.textContent = `${originalText} is Down (Timeout)`;
-                iframe.onload = null; // Prevent further changes after timeout
-            }, timeoutDuration); // Timeout duration in milliseconds
-
-            iframe.onload = function () {
-                if (button.style.backgroundColor !== 'red') { // Only update if not already timed out
-                    clearTimeout(timeout);
-                    button.style.backgroundColor = 'green';
-                    button.textContent = `${originalText} is Up`;
+        (function () {
+            /**
+             * Community hosts we probe for reachability only.
+             * Limited to D-STAR community infrastructure (not manufacturer marketing pages).
+             * Probes use fetch({ mode: 'no-cors' }) so we only learn whether the browser
+             * could complete a network transaction—not HTTP status codes or page content.
+             */
+            const SITES = [
+                {
+                    id: 'dstar-fans',
+                    name: 'DSTAR.fans',
+                    description: 'This site (guides, news, community).',
+                    url: 'https://dstar.fans/',
+                    probeUrl: 'https://dstar.fans/'
+                },
+                {
+                    id: 'dstarusers',
+                    name: 'D-STAR Users',
+                    description: 'Last heard, gateways, and network listings.',
+                    url: 'https://www.dstarusers.org/',
+                    probeUrl: 'https://www.dstarusers.org/'
+                },
+                {
+                    id: 'regist',
+                    name: 'Gateway REGIST',
+                    description: 'Official D-STAR gateway registration system.',
+                    url: 'https://regist.dstargateway.org/Dstar.do',
+                    probeUrl: 'https://regist.dstargateway.org/'
+                },
+                {
+                    id: 'dstarinfo',
+                    name: 'D-STAR Info',
+                    description: 'Maps and first-steps resources (HTTP site).',
+                    url: 'http://www.dstarinfo.com/',
+                    // Mixed-content: from HTTPS pages, browsers block active HTTP probes.
+                    // We still list the site; probe is skipped with an explicit "unknown" note.
+                    probeUrl: null,
+                    skipReason: 'HTTP-only host cannot be probed from this HTTPS page (browser mixed-content rules). Open the link to verify.'
                 }
-            };
+            ];
 
-            iframe.onerror = function () {
-                clearTimeout(timeout);
-                button.style.backgroundColor = 'red';
-                button.textContent = `${originalText} is Down`;
-            };
+            const TIMEOUT_MS = 10000;
+            const grid = document.getElementById('status-grid');
+            const recheckBtn = document.getElementById('recheck-btn');
 
-            iframe.src = url;
-        }
+            function setBadge(el, state, label) {
+                el.className = 'status-badge ' + state;
+                el.textContent = label;
+            }
 
-        // Call the function for each site when the page loads
-        window.onload = function () {
-            checkSiteStatus('http://www.dstarinfo.com/maps-by-region.aspx', 'dstarInfoButton', 'dstarInfoIframe', 10000); // 10 seconds timeout
-            checkSiteStatus('https://www.dstarusers.org', 'dstarUsersButton', 'dstarUsersIframe', 20000); // 20 seconds timeout
-            checkSiteStatus('https://www.icomamerica.com/lineup/amateur/D-STAR/', 'icomButton', 'icomIframe', 20000); // 20 seconds timeout
-            checkSiteStatus('https://icomuk.co.uk/D-Star_Digital_Amateur_Radio_Ham', 'icomUKButton', 'icomUKIframe', 20000); // 20 seconds timeout
-            checkSiteStatus('https://www.icomjapan.com/', 'icomJapanButton', 'icomJapanIframe', 20000); // 20 seconds timeout
-            checkSiteStatus('https://dstar.fans', 'dstarFansButton', 'dstarFansIframe', 20000); // 20 seconds timeout
-        };
+            function renderCards() {
+                grid.innerHTML = '';
+                SITES.forEach(function (site) {
+                    const card = document.createElement('article');
+                    card.className = 'status-card';
+                    card.setAttribute('role', 'listitem');
+                    card.dataset.siteId = site.id;
+                    card.innerHTML =
+                        '<div class="status-card-top">' +
+                        '<h3>' + site.name + '</h3>' +
+                        '<span class="status-badge checking" data-badge>Checking…</span>' +
+                        '</div>' +
+                        '<p>' + site.description + '</p>' +
+                        '<p class="status-meta" data-meta></p>' +
+                        '<a class="status-open" href="' + site.url + '" target="_blank" rel="noopener">Open site →</a>';
+                    grid.appendChild(card);
+                });
+            }
+
+            function probeSite(site) {
+                const card = grid.querySelector('[data-site-id="' + site.id + '"]');
+                if (!card) return Promise.resolve();
+                const badge = card.querySelector('[data-badge]');
+                const meta = card.querySelector('[data-meta]');
+
+                if (!site.probeUrl) {
+                    setBadge(badge, 'unknown', 'Not probed');
+                    meta.textContent = site.skipReason || 'Probe skipped.';
+                    return Promise.resolve();
+                }
+
+                setBadge(badge, 'checking', 'Checking…');
+                meta.textContent = 'Probing ' + site.probeUrl;
+                const started = performance.now();
+                const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+                const timer = setTimeout(function () {
+                    if (controller) controller.abort();
+                }, TIMEOUT_MS);
+
+                return fetch(site.probeUrl, {
+                    method: 'GET',
+                    mode: 'no-cors',
+                    cache: 'no-store',
+                    credentials: 'omit',
+                    referrerPolicy: 'no-referrer',
+                    signal: controller ? controller.signal : undefined
+                }).then(function () {
+                    // Opaque response: browser completed a network transaction with the host.
+                    // We cannot read status codes cross-origin; do not claim "fully operational."
+                    clearTimeout(timer);
+                    const ms = Math.round(performance.now() - started);
+                    setBadge(badge, 'up', 'Host responding');
+                    meta.textContent = 'Response in ~' + ms + ' ms (opaque; status code not readable)';
+                }).catch(function (err) {
+                    clearTimeout(timer);
+                    const aborted = err && (err.name === 'AbortError' || err.message === 'The user aborted a request.');
+                    setBadge(badge, 'down', aborted ? 'Timeout' : 'No response');
+                    meta.textContent = aborted
+                        ? 'No response within ' + (TIMEOUT_MS / 1000) + 's'
+                        : 'Network error or blocked (host may still be up for other clients)';
+                });
+            }
+
+            function runAll() {
+                renderCards();
+                return Promise.all(SITES.map(probeSite));
+            }
+
+            recheckBtn.addEventListener('click', function () {
+                recheckBtn.disabled = true;
+                runAll().finally(function () {
+                    recheckBtn.disabled = false;
+                });
+            });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', runAll);
+            } else {
+                runAll();
+            }
+        })();
     </script>
 </body>
 

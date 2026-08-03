@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>D-STAR Fans News</title>
+    <link>https://dstar.fans/news/</link>
+    <description>News, analysis, and operator-focused stories for D-STAR amateur radio enthusiasts from dstar.fans.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://dstar.fans/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://dstar.fans/images/android-chrome-512x512.png</url>
+      <title>D-STAR Fans News</title>
+      <link>https://dstar.fans/news/</link>
+    </image>
+    <item>
+      <title>The New Icom ID-5200 Isn’t Overpriced — It’s a Bargain</title>
+      <link>https://dstar.fans/news/new-icom-id-5200-isnt-overpriced-its-a-bargain.html</link>
+      <guid isPermaLink="true">https://dstar.fans/news/new-icom-id-5200-isnt-overpriced-its-a-bargain.html</guid>
+      <pubDate>Sun, 02 Aug 2026 12:00:00 GMT</pubDate>
+      <dc:creator>Mark, KE8BZW</dc:creator>
+      <category>Analysis</category>
+      <description><![CDATA[
+        <p>When Icom’s <a href="https://www.icomamerica.com/lineup/amateur/">ID-5200A</a> hit pre-order lists at $999.95, the amateur radio community reacted the way it usually does to new flagship mobiles: sticker shock. Forums lit up with familiar refrains—“A grand?” “Twice the price of an ID-5100.” “What is Icom smoking?” Overseas pricing near $750 and the current tariff environment only fueled the narrative that U.S. buyers were being asked to overpay.</p>
+        <p>The numbers tell a different story.</p>
+        <p>In 2014–2015 the <a href="https://www.icomamerica.com/lineup/products/ID-5100A/">ID-5100A</a> launched in the United States at roughly $750. The optional <a href="https://www.icomamerica.com/lineup/products/UT-133/">UT-133 Bluetooth module</a>—required for the wireless headset and Android control features that the new radio includes as standard—added another $100. Call it $850 for a fully optioned dual-band <a href="https://grokipedia.com/page/D-STAR">D-STAR</a> mobile with GPS, dualwatch, and touchscreen.</p>
+        <p>Apply cumulative U.S. CPI inflation from 2015 to mid-2026 (approximately 36.75 percent) using the <a href="https://www.bls.gov/cpi/">Bureau of Labor Statistics CPI</a> and that $850 becomes about $1,162 in today’s dollars. Layer on the current <a href="https://ustr.gov/issue-areas/enforcement/section-301-investigations/tariff-actions">Section 301 tariff</a> regime that places a 12.5 percent duty on most Japanese-origin goods and the inflation-adjusted figure rises to roughly $1,307.</p>
+        <p>The ID-5200A is listed at $999.95.</p>
+        <p>Even allowing for dealer margins, shipping, and the usual early-adopter premium, the new radio lands well below the real cost of its predecessor. Buyers are not paying more. They are paying less—while receiving a larger 4.3-inch color touchscreen with waterfall display, true independent dual receivers including DV/DV dualwatch, built-in Wi-Fi and Bluetooth, USB-C, microSD, enhanced D-STAR terminal/access-point modes, and <a href="https://dstar.fans/guides/d-prs.html">APRS</a> support via future firmware (see also <a href="https://dstar.fans/guides/d-prs.html">D-PRS</a> and <a href="https://dstar.fans/guides/gateways.html">gateways</a>).</p>
+        <p>We’ve seen this movie before. When the <a href="https://www.icomamerica.com/lineup/products/ID-52A/">ID-52A</a> replaced the <a href="https://www.icomamerica.com/lineup/products/ID-51A/">ID-51A</a>, the same complaints surfaced. The ID-51A launched in early 2013 at roughly $580–$650 street. The ID-52A arrived in late 2020 with an MSRP in the mid-$600s to low $700s and typical street pricing near $650. On paper the jump looked modest. Adjusted for the inflation that occurred between 2013 and 2021, the earlier radio’s real cost had already climbed into the high $600s to low $700s. The new color-screen, Bluetooth-equipped handheld landed essentially flat—or slightly cheaper—in constant dollars while delivering a larger display, louder audio, built-in Bluetooth, photo sharing, and improved dualwatch. The pattern repeats: each successive flagship arrives with a higher nominal number, the community reacts, and once inflation (and later tariffs) are accounted for, the real price is rarely the outlier it first appears.</p>
+        <p>The comparison is imperfect. The ID-5100 was a groundbreaking product in its day. The ID-5200 is an incremental but meaningful evolution of that platform, not a radical redesign. Yet the market has spoken in euros and pounds: European dealers list equivalent models in the £740–€870 range. The U.S. price reflects both currency and the present tariff environment. Once those factors are normalized, the American list price is not an outlier. It is the expected outcome of twelve years of inflation and trade policy.</p>
+        <p>Hams have long memories for the prices they once paid. Those memories are unreliable. Adjust the ledger for purchasing power and the current cost of doing business across the Pacific, and the ID-5200 looks less like a luxury tax and more like a relatively efficient piece of modern radio engineering.</p>
+        <p>Whether the feature set justifies the absolute dollars is a personal decision. Whether the radio is “overpriced” relative to its direct ancestor is not. On that narrower, more rigorous question, the math is clear: the ID-5200 costs significantly less than the ID-5100 did at launch.</p>
+      ]]></description>
+    </item>
+  </channel>
+</rss>
