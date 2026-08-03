@@ -1,5 +1,6 @@
 /* D-STAR Fans — sleek landing design (X / modern product aesthetic)
-   Dark by default; light when the device prefers light (prefers-color-scheme). */
+   Dark by default; light when the device prefers light (prefers-color-scheme).
+   Asset version: 20260803 (GitHub Pages cache-bust companions: ?v=20260803 on link/script tags) */
 
 :root {
     color-scheme: dark;
