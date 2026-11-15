@@ -1,6 +1,6 @@
 /* D-STAR Fans — sleek landing design (X / modern product aesthetic)
    Dark by default; light when the device prefers light (prefers-color-scheme).
-   Asset version: 20261115 (GitHub Pages cache-bust companions: ?v=20261115 on link/script tags) */
+   Asset version: 20261115b (GitHub Pages cache-bust companions: ?v=20261115b on link/script tags) */
 
 :root {
     color-scheme: dark;
@@ -1617,4 +1617,10 @@ section {
     .net-grid .net-card > .net-modes {
         grid-template-columns: 1.6fr 1fr 1fr 1fr;
     }
+}
+
+.net-utc {
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
 }
