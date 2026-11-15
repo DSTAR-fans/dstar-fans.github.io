@@ -1,6 +1,6 @@
 /* D-STAR Fans — sleek landing design (X / modern product aesthetic)
    Dark by default; light when the device prefers light (prefers-color-scheme).
-   Asset version: 20260803 (GitHub Pages cache-bust companions: ?v=20260803 on link/script tags) */
+   Asset version: 20261115b (GitHub Pages cache-bust companions: ?v=20261115b on link/script tags) */
 
 :root {
     color-scheme: dark;
@@ -1480,4 +1480,147 @@ section {
 #winter-field-day[style*="block"],
 #dstar-qso-party[style*="block"] {
     margin: 3rem 0;
+}
+
+/* ---------- Net cards (Ohio State Wide D-STAR Net, issue #33) ---------- */
+
+.net-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.net-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.75rem 1.75rem 1.5rem;
+    background:
+        linear-gradient(145deg, rgba(0, 186, 124, 0.12) 0%, transparent 55%),
+        var(--bg-card);
+}
+
+.net-card h3 {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    margin-bottom: 0.35rem;
+}
+
+.card .net-time {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.net-time i,
+.net-reminders i,
+.net-note i {
+    color: var(--accent);
+    margin-right: 0.25rem;
+}
+
+.net-modes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+}
+
+.net-modes > div {
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-subtle);
+}
+
+.net-modes dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.net-modes dd {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.card .net-reminders {
+    margin-bottom: 1rem;
+}
+
+.net-terminal {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+}
+
+.net-terminal summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.net-terminal summary::-webkit-details-marker {
+    display: none;
+}
+
+.net-terminal summary::before {
+    content: "\25B8";
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.net-terminal[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.net-terminal summary:hover {
+    background: var(--accent-soft);
+}
+
+.net-terminal-body {
+    padding: 0 1rem 1rem;
+}
+
+.net-terminal-body h4 {
+    font-size: 1rem;
+    margin: 0.25rem 0 0.75rem;
+    color: var(--text);
+}
+
+.net-terminal-body .net-modes {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card .net-terminal-body p {
+    margin-bottom: 0.6rem;
+}
+
+.card .net-terminal-body .net-note {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.net-featured {
+    margin: 0 0 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .net-grid .net-card > .net-modes {
+        grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    }
+}
+
+.net-utc {
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
 }

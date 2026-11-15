@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <link href="/styles/style.css?v=20260803" rel="stylesheet">
+    <link href="/styles/style.css?v=20261115b" rel="stylesheet">
     <title>D-STAR Reflectors & Nets — D-STAR Fans</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href="https://dstar.fans/guides/reflectors-and-nets.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="/scripts/script.js?v=20260803" defer></script>
+    <script src="/scripts/script.js?v=20261115b" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="description" content="Recommended D-STAR reflectors and nets, last heard, and HF DV coordination tips." />
@@ -70,6 +70,68 @@
         </header>
 
 
+            <section class="net-featured" id="oswdn" aria-label="Featured net: Ohio State Wide D-STAR Net">
+                <span class="section-kicker">Featured net</span>
+                <div class="card net-card">
+                    <div class="card-meta">
+                        <span class="tag">Weekly net</span>
+                        <span>OSWDN</span>
+                    </div>
+                    <h3>Ohio State Wide D-STAR Net</h3>
+                    <p class="net-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> Sunday nights 8p Eastern <span class="net-utc" data-net-utc data-net-weekday="0" data-net-hour="20" data-net-tz="America/New_York">(01:00 UTC Mon during EST, 00:00 UTC Mon during EDT)</span></p>
+                    <dl class="net-modes">
+                        <div>
+                            <dt>D-STAR</dt>
+                            <dd>
+                                <a href="https://xlx038.dyndns.org/" target="_blank" rel="noopener">XLX038A</a> /
+                                <a href="http://ref038.dstargateway.org/" target="_blank" rel="noopener">REF038A</a> /
+                                <a href="https://xlx978.dyndns.org/" target="_blank" rel="noopener">XLX978A</a>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>DMR</dt>
+                            <dd>BM TG 302050</dd>
+                        </div>
+                        <div>
+                            <dt>YSF</dt>
+                            <dd>17206</dd>
+                        </div>
+                        <div>
+                            <dt>Peanut</dt>
+                            <dd><a href="https://xlx978.dyndns.org/" target="_blank" rel="noopener">XLX978A</a></dd>
+                        </div>
+                    </dl>
+                    <p class="net-reminders">
+                        <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                        Reminders at: <a href="https://netcontrol.live" target="_blank" rel="noopener">netcontrol.live</a>
+                    </p>
+                    <details class="net-terminal">
+                        <summary>No repeater, no hotspot, no problem!</summary>
+                        <div class="net-terminal-body">
+                            <h4>Terminal Mode Settings</h4>
+                            <dl class="net-modes">
+                                <div>
+                                    <dt>Gateway Repeater (Server IP/Domain)</dt>
+                                    <dd><code>xlx038.dyndns.org</code></dd>
+                                </div>
+                                <div>
+                                    <dt>RPT/TO</dt>
+                                    <dd><code>/XLX038A</code></dd>
+                                </div>
+                            </dl>
+                            <p>
+                                Radio doesn't have terminal mode? Use the
+                                <a href="https://www.icomjapan.com/lineup/options/RS-MS3A/" target="_blank" rel="noopener">RS-MS3A</a> app!
+                            </p>
+                            <p class="net-note">
+                                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                Be sure to forward UDP ports 50001-50003 to the IP address of the RS-MS3A device or Terminal Mode radio.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
             <div class="content-item">
                 <p>
                     Reflector and net use needs a
@@ -111,7 +173,7 @@
                 </p>
                 <div style="margin-left: 1em;">The Canada D-STAR Net Fri @ 01:00 UTC</div>
                 <div style="margin-left: 1em;">Ohio Rag Chew Net (ORCN) Sun @ 12:00 UTC</div>
-                <div id="oswdn" style="margin-left: 1em;">Ohio State Wide D-STAR Net (OWDN) Sun @ 00:00 UTC</div>
+                <div style="margin-left: 1em;"><a href="#oswdn">Ohio State Wide D-STAR Net (OSWDN)</a> Sun @ 8p Eastern <span class="net-utc" data-net-utc data-net-weekday="0" data-net-hour="20" data-net-tz="America/New_York">(01:00 UTC Mon during EST, 00:00 UTC Mon during EDT)</span></div>
                 <p>
                     <a href="http://ref038.dstargateway.org/" target="_blank" rel="noopener">REF 038</a> C - Ohio Reflector
                     (Calling)

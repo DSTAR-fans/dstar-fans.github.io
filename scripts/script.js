@@ -215,3 +215,61 @@ function initTranslateControl() {
     wrap.appendChild(menu);
     navInner.appendChild(wrap);
 }
+
+// Net times: show the UTC equivalent of a weekly US Eastern net time, e.g. "(01:00 UTC Monday)".
+// Markup: <span data-net-utc data-net-weekday="0" data-net-hour="20" data-net-tz="America/New_York">fallback</span>
+// Weekday is 0 = Sunday. Computed for the next upcoming occurrence so it stays correct across EST/EDT changes.
+(function () {
+    function wallParts(date, tz) {
+        var parts = {};
+        new Intl.DateTimeFormat('en-US', {
+            timeZone: tz, hourCycle: 'h23', weekday: 'short',
+            year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'
+        }).formatToParts(date).forEach(function (p) { parts[p.type] = p.value; });
+        return parts;
+    }
+
+    // UTC instant for a wall-clock time (y, m, d, h) in tz.
+    function zonedToUtc(y, m, d, h, tz) {
+        var guess = Date.UTC(y, m - 1, d, h, 0);
+        for (var i = 0; i < 2; i++) {
+            var p = wallParts(new Date(guess), tz);
+            var asUtc = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute);
+            guess += Date.UTC(y, m - 1, d, h, 0) - asUtc;
+        }
+        return new Date(guess);
+    }
+
+    function nextOccurrence(weekday, hour, tz) {
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var now = new Date();
+        var p = wallParts(now, tz);
+        var add = (weekday - days.indexOf(p.weekday) + 7) % 7;
+        // If the net is today and already over (1 hour after start), use next week.
+        if (add === 0 && +p.hour >= hour + 1) add = 7;
+        var base = new Date(Date.UTC(+p.year, +p.month - 1, +p.day + add));
+        return zonedToUtc(base.getUTCFullYear(), base.getUTCMonth() + 1, base.getUTCDate(), hour, tz);
+    }
+
+    function initNetUtc() {
+        if (!window.Intl || !Intl.DateTimeFormat) return;
+        document.querySelectorAll('[data-net-utc]').forEach(function (el) {
+            try {
+                var tz = el.getAttribute('data-net-tz') || 'America/New_York';
+                var when = nextOccurrence(+el.getAttribute('data-net-weekday'), +el.getAttribute('data-net-hour'), tz);
+                var hm = new Intl.DateTimeFormat('en-GB', { timeZone: 'UTC', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(when);
+                var day = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long' }).format(when);
+                el.textContent = '(' + hm + ' UTC ' + day + ')';
+                el.title = 'Your local time: ' + when.toLocaleString(undefined, {
+                    weekday: 'long', hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
+                });
+            } catch (e) { /* keep the fallback text */ }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNetUtc);
+    } else {
+        initNetUtc();
+    }
+})();
